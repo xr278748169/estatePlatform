@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloud-config-server/cloud-config-server.iml" filepath="$PROJECT_DIR$/cloud-config-server/cloud-config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-eureka-server/cloud-eureka-server.iml" filepath="$PROJECT_DIR$/cloud-eureka-server/cloud-eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/platformCloud.iml" filepath="$PROJECT_DIR$/platformCloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platformcloud.iml" filepath="$PROJECT_DIR$/platformcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys-api/sys-api.iml" filepath="$PROJECT_DIR$/sys-api/sys-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys-auth/sys-auth.iml" filepath="$PROJECT_DIR$/sys-auth/sys-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys-common/sys-common.iml" filepath="$PROJECT_DIR$/sys-common/sys-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys-consumer/sys-consumer.iml" filepath="$PROJECT_DIR$/sys-consumer/sys-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys-provider/sys-provider.iml" filepath="$PROJECT_DIR$/sys-provider/sys-provider.iml" />
     </modules>
   </component>
 </project>

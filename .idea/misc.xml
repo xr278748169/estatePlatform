@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../../apps/apache-maven-3.3.9" />
-        <option name="userSettingsFile" value="$PROJECT_DIR$/../../apps/apache-maven-3.3.9/conf/settings.xml" />
-      </MavenGeneralSettings>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/cloud-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/sys-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sys-common/pom.xml" />
+        <option value="$PROJECT_DIR$/sys-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/sys-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/sys-provider/pom.xml" />
+      </list>
     </option>
   </component>
   <component name="ProjectRootManager">
