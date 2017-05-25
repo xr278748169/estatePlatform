@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cloud-config-server/cloud-config-server.iml" filepath="$PROJECT_DIR$/cloud-config-server/cloud-config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-eureka-server/cloud-eureka-server.iml" filepath="$PROJECT_DIR$/cloud-eureka-server/cloud-eureka-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/platformCloud.iml" filepath="$PROJECT_DIR$/platformCloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/platformcloud.iml" filepath="$PROJECT_DIR$/platformcloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/sys-api/sys-api.iml" filepath="$PROJECT_DIR$/sys-api/sys-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/sys-auth/sys-auth.iml" filepath="$PROJECT_DIR$/sys-auth/sys-auth.iml" />
