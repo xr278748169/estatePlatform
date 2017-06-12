@@ -3,6 +3,7 @@ package com.kerry.service;
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
+import com.kerry.dao.UserDao;
 import com.kerry.system.inter.IUserInter;
 import com.kerry.system.model.UserModel;
 import com.kerry.system.model.UserRoleModel;
@@ -26,6 +27,9 @@ public class UserService implements IUserInter {
 
     @Autowired
     private SQLManager sqlManager;
+
+    @Autowired
+    private UserDao userDao;
 
     @Autowired
     private UserRoleService userRoleService;
@@ -61,9 +65,6 @@ public class UserService implements IUserInter {
      */
     @Override
     public String update(UserModel userModel) throws Exception {
-        if(!userModel.getPassword().isEmpty()){
-            userModel.setPassword(MD5Util.string2MD5(userModel.getPassword()));
-        }
         int num = sqlManager.updateTemplateById(userModel);
         if(num > 0){
             if(!userModel.getRoleId().isEmpty()){
@@ -106,7 +107,7 @@ public class UserService implements IUserInter {
      */
     @Override
     public UserModel selectById(String id) throws Exception {
-        return sqlManager.unique(UserModel.class,id);
+        return userDao.selectByUserId(id);
     }
 
     /**
@@ -132,5 +133,16 @@ public class UserService implements IUserInter {
     @Override
     public List<UserModel> select(UserModel params) throws Exception {
         return sqlManager.template(params);
+    }
+
+    /**
+     * 查询用户名对应的信息
+     * @param loginName
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public UserModel selectByLoginName(String loginName) throws Exception {
+        return userDao.selectByLoginName(loginName);
     }
 }

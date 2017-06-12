@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface IRoleResInter extends BaseInter<RoleResModel> {
 
-    List<RoleResModel> findByRoleId(String roleId);
+    List<RoleResModel> findByRoleId(String roleId,String isRoot);
 
     String insertBatch(JSONObject jsonObject);
 

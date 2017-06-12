@@ -32,10 +32,10 @@ public class RoleResController {
      * @param roleId
      * @return
      */
-    @RequestMapping(value = "/{roleId}/list", method = RequestMethod.GET)
-    public List<RoleResModel> findByRoleId(@PathVariable("roleId") String roleId){
+    @RequestMapping(value = "/{roleId}/list/{isRoot}", method = RequestMethod.GET)
+    public List<RoleResModel> findByRoleId(@PathVariable("roleId") String roleId,@PathVariable("isRoot") String isRoot){
         ServiceInstance instance = client.getLocalServiceInstance();
-        List<RoleResModel> roleResList = roleResService.findByRoleId(roleId);
+        List<RoleResModel> roleResList = roleResService.findByRoleId(roleId,isRoot);
         logger.info("/sys/list, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + JSON.toJSONString(roleResList));
         return roleResList;
     }

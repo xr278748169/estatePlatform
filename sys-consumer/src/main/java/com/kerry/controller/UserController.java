@@ -43,4 +43,10 @@ public class UserController {
         return userCilent.delete(id);
     }
 
+    @RequestMapping(value = "/select/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public UserModel selectById(@PathVariable("id") String id){
+        return userCilent.selectById(id);
+    }
+
 }

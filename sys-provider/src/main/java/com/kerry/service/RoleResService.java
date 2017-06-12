@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * 角色资源设置
@@ -61,10 +62,14 @@ public class RoleResService implements IRoleResInter {
      * @return
      */
     @Override
-    public List<RoleResModel> findByRoleId(String roleId) {
-        RoleResModel params = new RoleResModel();
-        params.setRoleId(roleId);
-        return sqlManager.template(params);
+    public List<RoleResModel> findByRoleId(String roleId,String isRoot) {
+
+        System.out.println("测试信息："+isRoot);
+
+        if(isRoot.equals("no")){
+            isRoot = "";
+        }
+        return roleResDao.findByRoleId(roleId,isRoot);
     }
 
     /**
@@ -76,11 +81,28 @@ public class RoleResService implements IRoleResInter {
         List<RoleResModel> roleResList = new ArrayList<>();
         String roleId = jsonObject.getString("roleId");
         JSONArray jsonArray = jsonObject.getJSONArray("resList");
+        Map<String,Object> resMap = new HashMap<>();
         for (Object object : jsonArray){
             JSONObject resObj = JSONObject.parseObject(JSON.toJSONString(object));
+            resMap.put(resObj.getString("resId"),resObj);
+        }
+        for (Object object : jsonArray){
+            JSONObject resObj = JSONObject.parseObject(JSON.toJSONString(object));
+            //判断一下查询未全选节点的父级节点
+            if(resObj.getString("parentResId")!=null&&!resObj.getString("parentResId").equals("")){
+                if(!resMap.containsKey(resObj.getString("parentResId"))){
+                    RoleResModel roleRes = new RoleResModel();
+                    roleRes.setRoleId(roleId);
+                    roleRes.setResId(resObj.getString("parentResId"));
+                    roleRes.setExt2("root");
+                    roleResList.add(roleRes);
+                    resMap.put(resObj.getString("parentResId"),"root");
+                }
+            }
             RoleResModel roleRes = new RoleResModel();
             roleRes.setRoleId(roleId);
             roleRes.setResId(resObj.getString("resId"));
+            roleRes.setExt1(resObj.getString("resName"));
             roleResList.add(roleRes);
         }
         if(roleResList.size()!=0){

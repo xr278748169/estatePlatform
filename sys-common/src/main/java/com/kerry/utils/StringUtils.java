@@ -1,9 +1,14 @@
 package com.kerry.utils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by wangshen on 2017/5/23.
  */
 public class StringUtils {
+
+
 
     /**
      * 判断字符串是否为null或空字符串
@@ -18,5 +23,22 @@ public class StringUtils {
             return false;
         }
         return true;
+    }
+
+    /**
+     * 过滤特殊字符
+     * @param chars
+     * @return
+     */
+    public static String filterSpecialChar(String chars){
+        String regEx = "[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
+        Pattern p = Pattern.compile(regEx);
+        Matcher m = p.matcher(chars);
+        return m.replaceAll("").trim();
+    }
+
+    public static void main(String[] args) {
+        String str = "xceTCT/A7lleYYr8vdhDT9dKa4iE8XgQsRDuiwhlUCFe0oqrGgAIZ/SVTma8wwE2";
+        System.out.println(filterSpecialChar(str));
     }
 }

@@ -39,7 +39,7 @@ public class UserController {
     public PageQuery findByPage(@RequestBody SearchParams params) throws Exception {
         ServiceInstance instance = client.getLocalServiceInstance();
         PageQuery query = userInter.findByPage(params);
-        logger.info("/sys/list, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + JSON.toJSONString(query));
+        logger.info("/user/list, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + JSON.toJSONString(query));
         return query;
     }
 
@@ -93,7 +93,18 @@ public class UserController {
      * @throws Exception
      */
     @RequestMapping(value = "/select/{id}", method = RequestMethod.GET)
-    public UserModel selectById(String id) throws Exception {
+    public UserModel selectById(@PathVariable("id") String id) throws Exception {
         return userInter.selectById(id);
+    }
+
+    /**
+     * 根据loginName查询
+     * @param loginName
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/select/name/{loginName}", method = RequestMethod.GET)
+    public UserModel selectByLoginName(@PathVariable("loginName") String loginName) throws Exception {
+        return userInter.selectByLoginName(loginName);
     }
 }

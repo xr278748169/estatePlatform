@@ -34,5 +34,8 @@ public interface UserCilent {
     List<UserModel> select(@RequestBody UserModel params);
 
     @RequestMapping(value = "/user/select/{id}", method = RequestMethod.GET)
-    UserModel selectById(String id);
+    UserModel selectById(@PathVariable("id") String id);
+
+    @RequestMapping(value = "/user/select/name/{loginName}", method = RequestMethod.GET)
+    UserModel selectByLoginName(@PathVariable("loginName") String loginName);
 }

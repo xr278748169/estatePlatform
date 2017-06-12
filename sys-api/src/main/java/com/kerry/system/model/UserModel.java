@@ -30,6 +30,8 @@ public class UserModel extends User implements Serializable {
 
     private String groupName;
 
+    private String authCode;
+
     private String roleId;
 
     private String roleName;
@@ -49,6 +51,14 @@ public class UserModel extends User implements Serializable {
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;
+    }
+
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode;
     }
 
     public String getRoleId() {

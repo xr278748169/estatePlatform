@@ -17,8 +17,8 @@ import java.util.List;
 @FeignClient(name = "sys-provider")
 public interface RoleResClient {
 
-    @RequestMapping(value = "/role/res/{roleId}/list", method = RequestMethod.GET)
-    List<RoleResModel> findByRoleId(@PathVariable("roleId") String roleId);
+    @RequestMapping(value = "/role/res/{roleId}/list/{isRoot}", method = RequestMethod.GET)
+    List<RoleResModel> findByRoleId(@PathVariable("roleId") String roleId,@PathVariable("isRoot") String isRoot);
 
     @RequestMapping(value = "/role/res/save", method = RequestMethod.POST)
     String save(@RequestBody JSONObject jsonObject);

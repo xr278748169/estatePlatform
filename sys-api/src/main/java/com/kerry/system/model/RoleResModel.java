@@ -10,4 +10,24 @@ import java.io.Serializable;
  */
 @Table(name = "p_role_res")
 public class RoleResModel extends RoleRes implements Serializable {
+
+    private String resName;
+
+    private String resUrl;
+
+    public String getResName() {
+        return resName;
+    }
+
+    public void setResName(String resName) {
+        this.resName = resName;
+    }
+
+    public String getResUrl() {
+        return resUrl;
+    }
+
+    public void setResUrl(String resUrl) {
+        this.resUrl = resUrl;
+    }
 }

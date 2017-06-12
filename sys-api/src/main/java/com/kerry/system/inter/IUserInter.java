@@ -16,4 +16,12 @@ public interface IUserInter extends BaseInter<UserModel> {
      * @return
      */
     List<UserModel> select(UserModel params) throws Exception;
+
+    /**
+     * 查询用户名对应的信息
+     * @param loginName
+     * @return
+     * @throws Exception
+     */
+    UserModel selectByLoginName(String loginName) throws Exception;
 }

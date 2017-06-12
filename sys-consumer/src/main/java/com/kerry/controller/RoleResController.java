@@ -23,7 +23,7 @@ public class RoleResController {
     @RequestMapping(value = "/list/{roleId}", method = RequestMethod.GET)
     @ResponseBody
     public List<String> findByRoleId(@PathVariable("roleId") String roleId){
-        List<RoleResModel> roleResList = roleResClient.findByRoleId(roleId);
+        List<RoleResModel> roleResList = roleResClient.findByRoleId(roleId,"no");
         List<String> resIdList = new ArrayList<>();
         for (RoleResModel roleRes : roleResList){
             resIdList.add(roleRes.getResId());
