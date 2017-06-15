@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/sys-common/sys-common.iml" filepath="$PROJECT_DIR$/sys-common/sys-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/sys-consumer/sys-consumer.iml" filepath="$PROJECT_DIR$/sys-consumer/sys-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/sys-provider/sys-provider.iml" filepath="$PROJECT_DIR$/sys-provider/sys-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-api/wechat-api.iml" filepath="$PROJECT_DIR$/wechat-api/wechat-api.iml" />
     </modules>
   </component>
 </project>

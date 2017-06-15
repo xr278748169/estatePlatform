@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/sys-auth/pom.xml" />
         <option value="$PROJECT_DIR$/sys-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/sys-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/wechat-api/pom.xml" />
       </list>
     </option>
   </component>

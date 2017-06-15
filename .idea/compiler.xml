@@ -14,6 +14,7 @@
         <module name="sys-common" />
         <module name="sys-consumer" />
         <module name="sys-provider" />
+        <module name="wechat-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,6 +26,7 @@
       <module name="sys-common" target="1.5" />
       <module name="sys-consumer" target="1.8" />
       <module name="sys-provider" target="1.8" />
+      <module name="wechat-api" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
