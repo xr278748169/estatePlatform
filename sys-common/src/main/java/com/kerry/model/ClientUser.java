@@ -24,6 +24,8 @@ public class ClientUser {
 
     private Map<String,Object> userRole;
 
+    private Map<String,Object> userSys;
+
     private String orgId;
 
     private String authCode;
@@ -90,6 +92,14 @@ public class ClientUser {
 
     public void setUserRole(Map<String, Object> userRole) {
         this.userRole = userRole;
+    }
+
+    public Map<String, Object> getUserSys() {
+        return userSys;
+    }
+
+    public void setUserSys(Map<String, Object> userSys) {
+        this.userSys = userSys;
     }
 
     public String getOrgId() {

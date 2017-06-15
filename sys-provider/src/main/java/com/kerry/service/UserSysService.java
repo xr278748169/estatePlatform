@@ -65,9 +65,7 @@ public class UserSysService implements IUserSysInter {
      */
     @Override
     public List<UserSysModel> findByUserId(String userId) throws Exception {
-        UserSysModel params = new UserSysModel();
-        params.setUserId(userId);
-        return sqlManager.template(params);
+        return userSysDao.findByUserId(userId);
     }
 
     /**

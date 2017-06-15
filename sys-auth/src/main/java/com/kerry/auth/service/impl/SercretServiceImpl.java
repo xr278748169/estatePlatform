@@ -57,7 +57,7 @@ public class SercretServiceImpl implements SercretService {
      */
     @Override
     public String clear(String accessToken) {
-        if(!redisUtil.exists(accessToken)){
+        if(redisUtil.exists(accessToken)){
             redisUtil.remove(accessToken);
         }
         return ResponseEntity.createNormalJsonResponse("清空连接信息成功");

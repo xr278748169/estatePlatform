@@ -11,5 +11,23 @@ import java.io.Serializable;
 @Table(name = "p_user_sys")
 public class UserSysModel extends UserSys implements Serializable {
 
+    private String sysUrl;
 
+    private String sysName;
+
+    public String getSysUrl() {
+        return sysUrl;
+    }
+
+    public void setSysUrl(String sysUrl) {
+        this.sysUrl = sysUrl;
+    }
+
+    public String getSysName() {
+        return sysName;
+    }
+
+    public void setSysName(String sysName) {
+        this.sysName = sysName;
+    }
 }

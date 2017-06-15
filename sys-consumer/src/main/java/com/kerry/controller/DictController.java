@@ -42,9 +42,4 @@ public class DictController {
         return dictClient.delete(id);
     }
 
-    @RequestMapping(value = "/json", method = RequestMethod.GET)
-    @ResponseBody
-    public String findDictJson() throws Exception {
-        return dictClient.findDictJson();
-    }
 }

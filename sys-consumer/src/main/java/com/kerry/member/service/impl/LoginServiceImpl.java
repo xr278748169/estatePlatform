@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.kerry.client.RoleResClient;
 import com.kerry.client.UserCilent;
+import com.kerry.client.UserSysClient;
 import com.kerry.core.ResponseEntity;
 import com.kerry.member.client.SercretClient;
 import com.kerry.member.dto.Login;
@@ -11,6 +12,7 @@ import com.kerry.member.service.LoginService;
 import com.kerry.model.ClientUser;
 import com.kerry.system.model.RoleResModel;
 import com.kerry.system.model.UserModel;
+import com.kerry.system.model.UserSysModel;
 import com.kerry.utils.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +36,9 @@ public class LoginServiceImpl implements LoginService {
 
     @Autowired
     private RoleResClient roleResClient;
+
+    @Autowired
+    private UserSysClient userSysClient;
 
     /**
      * 登录请求处理
@@ -71,12 +76,19 @@ public class LoginServiceImpl implements LoginService {
         for (RoleResModel roleRes : resList){
             resMap.put(roleRes.getResUrl(),roleRes.getResName());
         }
+        //获取用户应用模块信息
+        List<UserSysModel> sysList = userSysClient.findByUserId(userModel.getUserId());
+        Map<String,Object> sysMap = new HashMap<>();
+        for (UserSysModel userSys : sysList){
+            sysMap.put(userSys.getSysUrl(),userSys.getSysName());
+        }
         //设置缓存信息
         clientUser.setUserName(userModel.getRealName());
         clientUser.setUserType(userModel.getUserType());
         clientUser.setOrgId(userModel.getOrgId());
         clientUser.setAuthCode(userModel.getAuthCode());
         clientUser.setUserRes(resMap);
+        clientUser.setUserSys(sysMap);
         sercretClient.updateClientUser(clientUser);
         return ResponseEntity.createNormalJsonResponse(JSONObject.parseObject(JSON.toJSONString(clientUser)));
     }

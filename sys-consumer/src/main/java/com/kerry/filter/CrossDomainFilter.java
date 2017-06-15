@@ -8,6 +8,7 @@ import java.io.IOException;
  * Created by wangshen on 2017/4/17.
  */
 public class CrossDomainFilter implements Filter {
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -16,7 +17,6 @@ public class CrossDomainFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         try {
-
             HttpServletResponse resp = (HttpServletResponse) servletResponse;
             resp.setHeader("Access-Control-Allow-Origin", "*");
             resp.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");

@@ -1,15 +1,19 @@
 package com.kerry.aspect;
 
+import com.kerry.member.client.SercretClient;
+import com.kerry.model.ClientUser;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * controller aop
@@ -17,9 +21,12 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Aspect
 @Configuration
-public class LogAspect {
+public class SysApiAspect {
 
-    private static final Logger logger = LoggerFactory.getLogger(LogAspect.class);
+    private static final Logger logger = LoggerFactory.getLogger(SysApiAspect.class);
+
+    @Autowired
+    private SercretClient sercretClient;
 
     /**
      * 声明切入点，只处理controller
@@ -36,7 +43,7 @@ public class LogAspect {
     //声明后置通知
     @AfterReturning(pointcut = "pointCutMethod()", returning = "result")
     public void doAfterReturning(String result) {
-        logger.debug(" --- 响应结果 --> " + result);
+        logger.info(" --- 响应结果 --> " + result);
     }
 
     //声明例外通知
@@ -65,7 +72,23 @@ public class LogAspect {
         String method = request.getMethod();
         String uri = request.getRequestURI();
         String queryString = request.getQueryString();
-        logger.debug(" --- request start params --> url: {}, method: {}, uri: {}, params: {}", url, method, uri, queryString);
+        logger.info(" --- request start params --> url: {}, method: {}, uri: {}, params: {}", url, method, uri, queryString);
+        /**
+         * 校验登录信息
+         */
+        HttpServletResponse response = sra.getResponse();
+        String authorization = request.getHeader("Authorization");
+        if(authorization==null||authorization.equals("")){
+            logger.info(" --- 未进行登录授权");
+            response.setCharacterEncoding("utf-8");
+            response.setStatus(-1);//-1表示去登录
+        }
+        ClientUser clientUser = sercretClient.getClientUser(authorization);
+        if(clientUser==null){
+            logger.info(" --- 登录授权信息已过期");
+            response.setCharacterEncoding("utf-8");
+            response.setStatus(-1);//-1表示去登录
+        }
         Object o = pjp.proceed();
         return o;
     }

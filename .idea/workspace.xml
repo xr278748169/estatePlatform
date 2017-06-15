@@ -2,53 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b577f90-6c95-4196-b8e1-83b45ae7aceb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IUserSysInter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserSysModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/base/UserSys.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/config/ClientType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ValidateClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/OrgClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/OrgController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/client/SercretClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/AppController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/LoginController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/OrgController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserSysController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserSysDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserSysService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-provider/src/main/resources/sql/userSysModel.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/controller/MyStartupRunner.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/login/dto/LoginParams.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserSysClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserSysController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/webApi/CommonController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/aspect/LogAspect.java" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/aspect/SysApiAspect.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IOrgInter.java" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IOrgInter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IRoleResInter.java" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IRoleResInter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IUserInter.java" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IUserInter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/OrgModel.java" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/OrgModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/RoleResModel.java" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/RoleResModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserModel.java" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/controller/SercretController.java" afterPath="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/controller/SercretController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/SercretService.java" afterPath="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/SercretService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserSysModel.java" afterPath="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserSysModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/impl/SercretServiceImpl.java" afterPath="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/impl/SercretServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/RandomStr.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/RandomStr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SecurityUtil.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SecurityUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/StringUtils.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/StringUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/RoleResClient.java" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/RoleResClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserCilent.java" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserCilent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictController.java" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/RoleResController.java" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/RoleResController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserController.java" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/filter/CrossDomainFilter.java" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/filter/CrossDomainFilter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/RoleResController.java" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/RoleResController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserController.java" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/RoleResDao.java" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/RoleResDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/OrgService.java" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/OrgService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/RoleResService.java" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/RoleResService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserService.java" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/resources/sql/orgModel.md" afterPath="$PROJECT_DIR$/sys-provider/src/main/resources/sql/orgModel.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/resources/sql/roleResModel.md" afterPath="$PROJECT_DIR$/sys-provider/src/main/resources/sql/roleResModel.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/resources/sql/userModel.md" afterPath="$PROJECT_DIR$/sys-provider/src/main/resources/sql/userModel.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserSysDao.java" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserSysDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserSysService.java" afterPath="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserSysService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-provider/src/main/resources/sql/userSysModel.md" afterPath="$PROJECT_DIR$/sys-provider/src/main/resources/sql/userSysModel.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,20 +36,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserSysController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserSysController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="35" column="100" lean-forward="true" selection-start-line="35" selection-start-column="100" selection-end-line="35" selection-end-column="100" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -108,21 +63,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cloud-repo-config/sys-config-developer.properties" />
-        <option value="$PROJECT_DIR$/cloud-repo-config/sys-auth-config-developer.properties" />
-        <option value="$PROJECT_DIR$/cloud-config-server/src/main/resources/bootstrap.properties" />
-        <option value="$PROJECT_DIR$/sys-auth/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/config/Constant.java" />
         <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/config/ClientType.java" />
         <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/RandomStr.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IUserInter.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/LoginController.java" />
         <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserCilent.java" />
         <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SecurityUtil.java" />
         <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/StringUtils.java" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictController.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/OrgModel.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IOrgInter.java" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/OrgController.java" />
@@ -139,25 +87,33 @@
         <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/client/SercretClient.java" />
         <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/AppController.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/RoleResModel.java" />
-        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java" />
-        <option value="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/impl/SercretServiceImpl.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserModel.java" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/resources/sql/userModel.md" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/RoleResDao.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IRoleResInter.java" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/RoleResController.java" />
         <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/RoleResClient.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java" />
         <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/RoleResController.java" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/RoleResService.java" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/resources/sql/roleResModel.md" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/base/UserSys.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserSysModel.java" />
         <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IUserSysInter.java" />
+        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserSysController.java" />
+        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserSysClient.java" />
+        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserSysController.java" />
+        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/LoginController.java" />
+        <option value="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/impl/SercretServiceImpl.java" />
+        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserSysDao.java" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserSysService.java" />
+        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserSysModel.java" />
+        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java" />
         <option value="$PROJECT_DIR$/sys-provider/src/main/resources/sql/userSysModel.md" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserSysController.java" />
+        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/aspect/LogAspect.java" />
+        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictController.java" />
+        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/webApi/CommonController.java" />
+        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/filter/CrossDomainFilter.java" />
+        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/aspect/SysApiAspect.java" />
       </list>
     </option>
   </component>
@@ -198,7 +154,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -211,127 +167,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sys-consumer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sys-consumer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sys-consumer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sys-consumer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kerry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sys-consumer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kerry" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -879,7 +717,13 @@
       <workItem from="1496800938399" duration="16773000" />
       <workItem from="1496887977519" duration="12011000" />
       <workItem from="1496974424028" duration="7534000" />
-      <workItem from="1497232886777" duration="2964000" />
+      <workItem from="1497232886777" duration="11946000" />
+      <workItem from="1497263457464" duration="955000" />
+      <workItem from="1497340160726" duration="3256000" />
+      <workItem from="1497406242802" duration="4447000" />
+      <workItem from="1497425681515" duration="110000" />
+      <workItem from="1497429362857" duration="661000" />
+      <workItem from="1497497053716" duration="2555000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1495681087238</created>
@@ -902,11 +746,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495683756927</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="初始化">
+      <created>1497236518981</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1497236518982</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110524000" />
+    <option name="totallyTimeSpent" value="131490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
@@ -924,8 +775,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39256865" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37641358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -934,7 +786,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25282714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27705976" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -943,7 +795,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1000,7 +851,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="7" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1009,173 +860,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserCilent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="36" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/base/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/OrgService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="146" column="5" lean-forward="false" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/GroupResService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/DictTypeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platformcloud.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SecurityUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="134" column="42" lean-forward="true" selection-start-line="134" selection-start-column="42" selection-end-line="134" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/SercretService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="40" column="15" lean-forward="false" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/controller/SercretController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="67" column="73" lean-forward="true" selection-start-line="66" selection-start-column="4" selection-end-line="67" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/client/SercretClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="30" column="67" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ValidateClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserRoleClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/RoleResModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="78" column="45" lean-forward="false" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/impl/SercretServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/resources/sql/userModel.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-242">
-            <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/resources/sql/orgModel.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="75">
-            <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IRoleResInter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1187,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
           <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1205,13 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="57" column="42" lean-forward="true" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/RoleResController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1226,13 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/interceptor/SqlInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/base/UserRole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1244,53 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-            <element signature="e#813#814#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1123#1124#0" expanded="true" />
-            <element signature="e#1163#1164#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1253#1254#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-            <element signature="e#1423#1424#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1492#1493#0" expanded="true" />
-            <element signature="e#1525#1526#0" expanded="true" />
-            <element signature="e#1577#1578#0" expanded="true" />
-            <element signature="e#1621#1622#0" expanded="true" />
-            <element signature="e#1656#1657#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#1739#1740#0" expanded="true" />
-            <element signature="e#1783#1784#0" expanded="true" />
-            <element signature="e#1820#1821#0" expanded="true" />
-            <element signature="e#1853#1854#0" expanded="true" />
-            <element signature="e#1905#1906#0" expanded="true" />
-            <element signature="e#1949#1950#0" expanded="true" />
-            <element signature="e#1984#1985#0" expanded="true" />
-            <element signature="e#2017#2018#0" expanded="true" />
-            <element signature="e#2067#2068#0" expanded="true" />
-            <element signature="e#2111#2112#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1312,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1320,7 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1328,9 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1338,35 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="60" column="7" lean-forward="true" selection-start-line="60" selection-start-column="7" selection-end-line="60" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserSysDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserSysModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1374,7 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
           <caret line="112" column="82" lean-forward="true" selection-start-line="110" selection-start-column="12" selection-end-line="112" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1383,18 +970,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="210">
             <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/resources/sql/userSysModel.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="30">
-            <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1404,7 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="29" column="41" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="29" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,7 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,7 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1428,27 +1000,229 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="72" column="4" lean-forward="false" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserSysService.java">
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserRoleClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="79" column="71" lean-forward="true" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserSysController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="35" column="100" lean-forward="true" selection-start-line="35" selection-start-column="100" selection-end-line="35" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="53">
+          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserSysClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="54" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="23" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/KQueueArrayWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="133" column="23" lean-forward="false" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformcloud.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserSysController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/client/SercretClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="29" column="82" lean-forward="true" selection-start-line="29" selection-start-column="82" selection-end-line="29" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="36" column="35" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="96" column="45" lean-forward="false" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserSysDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserSysService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="67" column="47" lean-forward="false" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserSysModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="72" column="20" lean-forward="true" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/resources/sql/userSysModel.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictTypeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/webApi/CommonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/filter/CrossDomainFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/SercretService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/impl/SercretServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/controller/SercretController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/redis/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/redis/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/interceptor/SqlInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/DictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-483">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/beetl/BeetlSqlConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="83" column="58" lean-forward="true" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/aspect/SysApiAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="81" column="40" lean-forward="false" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
