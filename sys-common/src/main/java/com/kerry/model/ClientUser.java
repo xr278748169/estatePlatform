@@ -16,6 +16,8 @@ public class ClientUser {
 
     private String accessToken;
 
+    private String code;
+
     private String userName;
 
     private String userType;
@@ -60,6 +62,14 @@ public class ClientUser {
 
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getUserName() {

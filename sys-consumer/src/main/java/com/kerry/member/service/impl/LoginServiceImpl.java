@@ -83,6 +83,7 @@ public class LoginServiceImpl implements LoginService {
             sysMap.put(userSys.getSysUrl(),userSys.getSysName());
         }
         //设置缓存信息
+        clientUser.setCode(userModel.getUserId());
         clientUser.setUserName(userModel.getRealName());
         clientUser.setUserType(userModel.getUserType());
         clientUser.setOrgId(userModel.getOrgId());

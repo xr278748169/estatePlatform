@@ -37,8 +37,4 @@ public class StringUtils {
         return m.replaceAll("").trim();
     }
 
-    public static void main(String[] args) {
-        String str = "xceTCT/A7lleYYr8vdhDT9dKa4iE8XgQsRDuiwhlUCFe0oqrGgAIZ/SVTma8wwE2";
-        System.out.println(filterSpecialChar(str));
-    }
 }

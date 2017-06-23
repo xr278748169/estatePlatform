@@ -32,9 +32,4 @@ public class RandomStr {
         return randNum;
     }
 
-    public static void main(String[] args) {
-        String s = getRandomStr(128);
-        String token = SecurityUtil.AESEncode(s,"VAGgPTIAsnZFJSvtjSIyMsFsDaUvAjzv");
-        System.out.println(token);
-    }
 }

@@ -11,6 +11,8 @@
       <module fileurl="file://$PROJECT_DIR$/sys-consumer/sys-consumer.iml" filepath="$PROJECT_DIR$/sys-consumer/sys-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/sys-provider/sys-provider.iml" filepath="$PROJECT_DIR$/sys-provider/sys-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/wechat-api/wechat-api.iml" filepath="$PROJECT_DIR$/wechat-api/wechat-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-consumer/wechat-consumer.iml" filepath="$PROJECT_DIR$/wechat-consumer/wechat-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechat-provider/wechat-provider.iml" filepath="$PROJECT_DIR$/wechat-provider/wechat-provider.iml" />
     </modules>
   </component>
 </project>

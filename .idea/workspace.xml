@@ -2,11 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b577f90-6c95-4196-b8e1-83b45ae7aceb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/pom.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sys-api/.settings/org.eclipse.core.resources.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sys-api/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sys-api/.settings/org.eclipse.m2e.core.prefs" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SignUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/XmlUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/MessageType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/WechatAPI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/WxConstant.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/inter/IEventInter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/inter/IWechatUserInter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/AbstractBaseMessage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/Articles.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventClick.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventLocation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventScan.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventSubscribe.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageImage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageLink.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageLocation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageText.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageVideo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageVoice.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/WechatUser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/inter/IAccountInter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/inter/IConstantInter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/inter/IMenuInter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/inter/ITUserInter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/inter/base/BaseInter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/AccountModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/ConstantModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/MenuModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/TUserModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/base/TAccount.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/base/TMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/base/TUser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/base/TWxConstant.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/api/controller/WechatController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/api/test.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/aspect/WechatApiAspect.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/client/AccountClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/client/ConstantClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/client/SercretClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/controller/AccountController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/controller/ConstantController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/filter/CrossDomainFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/redis/RedisConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/redis/RedisUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/api/service/EventService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/api/test.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/beetl/BeetlSqlConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/controller/AccountController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/controller/ConstantController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/interceptor/SqlInterceptor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/redis/RedisConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/redis/RedisUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/service/AccountService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/service/ConstantService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/resources/sql/accountModel.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat-provider/src/main/resources/sql/constantModel.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/RandomStr.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/RandomStr.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SecurityUtil.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SecurityUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/StringUtils.java" afterPath="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/StringUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java" afterPath="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat-api/pom.xml" afterPath="$PROJECT_DIR$/wechat-api/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat-api/wechat-api.iml" afterPath="$PROJECT_DIR$/wechat-api/wechat-api.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat-consumer/pom.xml" afterPath="$PROJECT_DIR$/wechat-consumer/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/WechatConsumerApplication.java" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/WechatConsumerApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat-consumer/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/wechat-consumer/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat-provider/pom.xml" afterPath="$PROJECT_DIR$/wechat-provider/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/WechatProviderApplication.java" afterPath="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/WechatProviderApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat-provider/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/wechat-provider/src/main/resources/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,6 +90,8 @@
     <ignored path="$PROJECT_DIR$/sys-consumer/target/" />
     <ignored path="$PROJECT_DIR$/sys-provider/target/" />
     <ignored path="$PROJECT_DIR$/wechat-api/target/" />
+    <ignored path="$PROJECT_DIR$/wechat-provider/target/" />
+    <ignored path="$PROJECT_DIR$/wechat-consumer/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,18 +101,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wechat-api/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,60 +125,71 @@
       <projects_view />
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/filter/CrossDomainFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/WechatConsumerApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/aspect/WechatApiAspect.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/redis/RedisUtil.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/redis/RedisConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/redis/RedisConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/redis/RedisConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/beetl/BeetlSqlConfig.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/redis/RedisUtil.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/config/ClientType.java" />
-        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/RandomStr.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IUserInter.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserCilent.java" />
-        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SecurityUtil.java" />
-        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/StringUtils.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/OrgModel.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IOrgInter.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/OrgController.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/OrgController.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/OrgClient.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/OrgService.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/resources/sql/orgModel.md" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserService.java" />
-        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ValidateClient.java" />
-        <option value="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/SercretService.java" />
-        <option value="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/controller/SercretController.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/client/SercretClient.java" />
         <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/AppController.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/RoleResModel.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserModel.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/resources/sql/userModel.md" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/RoleResDao.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IRoleResInter.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/RoleResController.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/RoleResClient.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/RoleResController.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/RoleResService.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/resources/sql/roleResModel.md" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/base/UserSys.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IUserSysInter.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserSysController.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserSysClient.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserSysController.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/LoginController.java" />
-        <option value="$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/impl/SercretServiceImpl.java" />
         <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserSysDao.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserSysService.java" />
-        <option value="$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserSysModel.java" />
         <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java" />
-        <option value="$PROJECT_DIR$/sys-provider/src/main/resources/sql/userSysModel.md" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/aspect/LogAspect.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictController.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/webApi/CommonController.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/filter/CrossDomainFilter.java" />
-        <option value="$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/aspect/SysApiAspect.java" />
-        <option value="$PROJECT_DIR$/wechat-api/pom.xml" />
+        <option value="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/controller/AccountController.java" />
+        <option value="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/aspect/WechatApiAspect.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/base/TWxConstant.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/model/ConstantModel.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/inter/IConstantInter.java" />
+        <option value="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/service/ConstantService.java" />
+        <option value="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/controller/ConstantController.java" />
+        <option value="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/client/ConstantClient.java" />
+        <option value="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/controller/ConstantController.java" />
+        <option value="$PROJECT_DIR$/wechat-provider/src/main/resources/sql/accountModel.md" />
+        <option value="$PROJECT_DIR$/wechat-provider/src/main/resources/sql/constantModel.md" />
+        <option value="$PROJECT_DIR$/cloud-repo-config/wechat-config-developer.properties" />
+        <option value="$PROJECT_DIR$/wechat-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/Articles.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventClick.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventLocation.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventScan.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/AbstractBaseMessage.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventSubscribe.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventView.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageEntity.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageImage.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageLink.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageLocation.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageText.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageVideo.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageVoice.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageUser.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/WechatUser.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/inter/IWechatUserInter.java" />
+        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SignUtil.java" />
+        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/XmlUtils.java" />
+        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/StringUtils.java" />
+        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SecurityUtil.java" />
+        <option value="$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/RandomStr.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/constant.java" />
+        <option value="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/redis/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/service/AccountService.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/RespMessageType.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/MessageType.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/WxConstant.java" />
+        <option value="$PROJECT_DIR$/wechat-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/wechat-consumer/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/api/controller/WechatController.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/inter/IEventInter.java" />
+        <option value="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/api/service/EventService.java" />
+        <option value="$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/WechatAPI.java" />
       </list>
     </option>
   </component>
@@ -156,9 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -171,62 +242,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platformcloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wechat-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -236,6 +256,16 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.kerry.wechat.client" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat" />
+      <recent name="$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat" />
+      <recent name="redis" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -249,47 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.config-server">
-    <configuration default="false" name="SecurityUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.kerry.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.kerry.utils.SecurityUtil" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="sys-common" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="StringUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.kerry.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.kerry.utils.StringUtils" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="sys-common" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.wechat-consumer">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -731,21 +721,31 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="wechat-provider" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kerry.wechat.WechatProviderApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <module name="wechat-provider" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="wechat-consumer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.kerry.wechat.WechatConsumerApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <module name="wechat-consumer" />
+      <envs />
+      <method />
+    </configuration>
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.eureka-server" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.sys-auth" />
       <item index="2" class="java.lang.String" itemvalue="Spring Boot.sys-provider" />
       <item index="3" class="java.lang.String" itemvalue="Spring Boot.sys-consumer" />
       <item index="4" class="java.lang.String" itemvalue="Spring Boot.config-server" />
-      <item index="5" class="java.lang.String" itemvalue="Application.SecurityUtil" />
-      <item index="6" class="java.lang.String" itemvalue="Application.StringUtils" />
+      <item index="5" class="java.lang.String" itemvalue="Spring Boot.wechat-provider" />
+      <item index="6" class="java.lang.String" itemvalue="Spring Boot.wechat-consumer" />
     </list>
-    <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.SecurityUtil" />
-        <item index="1" class="java.lang.String" itemvalue="Application.StringUtils" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -781,7 +781,19 @@
       <workItem from="1497425681515" duration="110000" />
       <workItem from="1497429362857" duration="661000" />
       <workItem from="1497497053716" duration="2555000" />
-      <workItem from="1497515734522" duration="1365000" />
+      <workItem from="1497515734522" duration="2010000" />
+      <workItem from="1497578985803" duration="2337000" />
+      <workItem from="1497838982019" duration="3304000" />
+      <workItem from="1497859500817" duration="2060000" />
+      <workItem from="1497861685244" duration="6280000" />
+      <workItem from="1497869520976" duration="368000" />
+      <workItem from="1497924598210" duration="18098000" />
+      <workItem from="1498010699134" duration="5322000" />
+      <workItem from="1498026114293" duration="10057000" />
+      <workItem from="1498097481867" duration="15049000" />
+      <workItem from="1498184351456" duration="559000" />
+      <workItem from="1498213103576" duration="288000" />
+      <workItem from="1498214351327" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1495681087238</created>
@@ -811,11 +823,53 @@
       <option name="project" value="LOCAL" />
       <updated>1497236518982</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="初始化">
+      <created>1497517624238</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1497517624238</updated>
+    </task>
+    <task id="LOCAL-00006" summary="初始化">
+      <created>1497517653876</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1497517653876</updated>
+    </task>
+    <task id="LOCAL-00007" summary="添加微信服务提供方模块">
+      <created>1497861740579</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1497861740579</updated>
+    </task>
+    <task id="LOCAL-00008" summary="添加微信模块配置文件">
+      <created>1497865189436</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1497865189436</updated>
+    </task>
+    <task id="LOCAL-00009" summary="添加微信前端API模块">
+      <created>1497869568095</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1497869568096</updated>
+    </task>
+    <task id="LOCAL-00010" summary="微信增加redis配置">
+      <created>1498036278676</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1498036278676</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132855000" />
+    <option name="totallyTimeSpent" value="197253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
@@ -833,18 +887,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37641358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53796446" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3796446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21567044" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2584814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -902,7 +956,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始化" />
+    <MESSAGE value="添加微信服务提供方模块" />
+    <MESSAGE value="添加微信模块配置文件" />
+    <MESSAGE value="添加微信前端API模块" />
+    <MESSAGE value="微信增加redis配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="微信增加redis配置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -918,254 +976,240 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserRoleModel.java">
+    <entry file="file://$PROJECT_DIR$/wechat-provider/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="351">
+          <caret line="44" column="64" lean-forward="true" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IUserRoleInter.java">
+    <entry file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/redis/RedisConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="70" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="70" />
+        <state relative-caret-position="68">
+          <caret line="32" column="55" lean-forward="true" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserRoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/ResService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/inter/IUserSysInter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/RoleResService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="112" column="82" lean-forward="true" selection-start-line="110" selection-start-column="12" selection-end-line="112" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/resources/sql/roleResModel.md">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="210">
-            <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <first_editor relative-caret-position="105">
+            <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserRoleController.java">
+    <entry file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/interceptor/SqlInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="41" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="29" selection-end-column="41" />
+        <state relative-caret-position="146">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/RoleResDao.java">
+    <entry file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/service/ConstantService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="38" />
+        <state relative-caret-position="324">
+          <caret line="88" column="24" lean-forward="true" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/ReginController.java">
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/packagetest.java" />
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/Articles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="45">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventClick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/AbstractBaseMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventScan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventSubscribe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="72" column="4" lean-forward="false" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="71" />
+          <caret line="23" column="67" lean-forward="false" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserRoleClient.java">
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/EventView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="29" column="62" lean-forward="true" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageLink.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="35" />
+          <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/UserSysController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/client/UserSysClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="54" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="23" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/KQueueArrayWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="133" column="23" lean-forward="false" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platformcloud.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/UserSysController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/client/SercretClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" column="82" lean-forward="true" selection-start-line="29" selection-start-column="82" selection-end-line="29" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/controler/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="36" column="35" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/model/ClientUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="96" column="45" lean-forward="false" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/dao/UserSysDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserSysService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="67" column="47" lean-forward="false" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-api/src/main/java/com/kerry/system/model/UserSysModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/member/service/impl/LoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="72" column="20" lean-forward="true" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/resources/sql/userSysModel.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="90">
-            <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictTypeController.java">
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageLocation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/controller/DictController.java">
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="480">
+          <caret line="34" column="64" lean-forward="false" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/webApi/CommonController.java">
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageVideo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="32" />
+        <state relative-caret-position="525">
+          <caret line="35" column="59" lean-forward="false" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/filter/CrossDomainFilter.java">
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/MessageVoice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="393">
+          <caret line="35" column="65" lean-forward="false" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/SercretService.java">
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/model/WechatUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/inter/IWechatUserInter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/service/impl/SercretServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/client/SercretClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        <state relative-caret-position="135">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/controller/SercretController.java">
+    <entry file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/api/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="75">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/aspect/WechatApiAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SignUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/XmlUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="76" column="54" lean-forward="true" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/SecurityUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys-common/src/main/java/com/kerry/utils/RandomStr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/redis/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="694">
+          <caret line="81" column="82" lean-forward="true" selection-start-line="81" selection-start-column="82" selection-end-line="81" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/MessageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/WxConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1176,119 +1220,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/redis/RedisConfig.java">
+    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/interceptor/SqlInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/cloud-repo-config/wechat-config-developer.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/controller/DictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-483">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/java/com/kerry/beetl/BeetlSqlConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="83" column="58" lean-forward="true" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/redis/RedisUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-consumer/src/main/java/com/kerry/aspect/SysApiAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="81" column="40" lean-forward="false" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud-config-server/src/main/resources/bootstrap.properties">
+    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/SysAuthApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud-config-server/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/WechatConsumerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud-config-server/src/main/java/com/kerry/CloudConfigServerApplication.java">
+    <entry file="file://$PROJECT_DIR$/sys-auth/src/main/java/com/kerry/auth/redis/RedisConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="32" column="55" lean-forward="true" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud-repo-config/sys-config-developer.properties">
+    <entry file="file://$PROJECT_DIR$/sys-auth/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="53" lean-forward="true" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
-          <folding />
+        <state relative-caret-position="93">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="30" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud-repo-config/sys-auth-config-developer.properties">
+    <entry file="file://$PROJECT_DIR$/wechat-consumer/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="86">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys-provider/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/wechat-provider/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="66" lean-forward="false" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-          <folding />
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat-api/pom.xml">
+    <entry file="file://$PROJECT_DIR$/wechat-consumer/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/api/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/inter/IEventInter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-provider/src/main/java/com/kerry/wechat/api/service/EventService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-api/src/main/java/com/kerry/wechat/api/WechatAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="74" lean-forward="true" selection-start-line="43" selection-start-column="74" selection-end-line="43" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat-consumer/src/main/java/com/kerry/wechat/api/controller/WechatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1344,7 +1387,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring|sys-provider</last-edited>
+          <last-edited>wehcat-provider</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
