@@ -11,7 +11,11 @@ public class TUser {
 
     private String tuId;
 
+    private String accountId;
+
     private String openId;
+
+    private String nickName;
 
     private String sex;
 
@@ -37,7 +41,7 @@ public class TUser {
 
     private String isFocus;
 
-    private String focusTime;
+    private Date focusTime;
 
     private String remarks;
 
@@ -64,12 +68,28 @@ public class TUser {
         this.tuId = tuId;
     }
 
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
     public String getOpenId() {
         return openId;
     }
 
     public void setOpenId(String openId) {
         this.openId = openId;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public String getSex() {
@@ -168,11 +188,11 @@ public class TUser {
         this.isFocus = isFocus;
     }
 
-    public String getFocusTime() {
+    public Date getFocusTime() {
         return focusTime;
     }
 
-    public void setFocusTime(String focusTime) {
+    public void setFocusTime(Date focusTime) {
         this.focusTime = focusTime;
     }
 

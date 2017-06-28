@@ -3,6 +3,8 @@ package com.kerry.wechat.api.controller;
 import com.kerry.utils.SignUtil;
 import com.kerry.wechat.api.MessageType;
 import com.kerry.wechat.api.WxConstant;
+import com.kerry.wechat.api.client.EventClient;
+import com.kerry.wechat.api.inter.IEventInter;
 import com.kerry.wechat.model.AccountModel;
 import com.kerry.wechat.redis.RedisUtil;
 import org.dom4j.Document;
@@ -36,6 +38,8 @@ public class WechatController {
 
     private String resultMsg;//返回微信的消息
 
+    @Autowired
+    private EventClient eventClient;
 
     /**
      * 微信公众号绑定认证
@@ -153,7 +157,7 @@ public class WechatController {
 
                 break;
             case SUBSCRIBE:// 用户关注了平台
-
+                resultMsg = eventClient.focus(element,accountModel);
                 break;
             case UNSUBSCRIBE:// 用户取消平台的关注
 

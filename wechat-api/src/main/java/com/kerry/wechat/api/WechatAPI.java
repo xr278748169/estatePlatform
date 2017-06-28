@@ -6,6 +6,16 @@ package com.kerry.wechat.api;
  */
 public abstract class WechatAPI {
 
+
+    /**
+     * 获取微信服务器IP
+     * @param accessToken
+     * @return
+     */
+    public static String getWechatServIP(String accessToken){
+        return "https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token="+accessToken;
+    }
+
     /**
      * 微信access_token_url
      * @return

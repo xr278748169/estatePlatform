@@ -17,6 +17,6 @@ public interface IEventInter {
      * @param element
      * @return
      */
-    String focus(Element element, AccountModel accountModel);
+    String focus(Element element, AccountModel accountModel) throws Exception;
 
 }
