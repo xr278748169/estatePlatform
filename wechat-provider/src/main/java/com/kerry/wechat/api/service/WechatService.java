@@ -39,10 +39,11 @@ public class WechatService implements IWechatInter {
         String result;
         JSONObject jsonObj;
         String accessToken = (String) redisUtil.getHash(WxConstant.WECHAT_ACCESS_TOKEN_KEY,accountId);
-        if(accessToken==null){//获取accessToken
-            jsonObj = getNewAccessToken(accountId, accessToken);
+        if(accessToken==null||accessToken.equals("")){//获取accessToken
+            jsonObj = getNewAccessToken(accountId);
             if (jsonObj == null) return null;
             accessToken = jsonObj.getString("access_token");
+            redisUtil.setHash(WxConstant.WECHAT_ACCESS_TOKEN_KEY,accountId,accessToken);
         }
         //验证token是否有效
         url = WechatAPI.getWechatServIP(accessToken);
@@ -50,9 +51,10 @@ public class WechatService implements IWechatInter {
         jsonObj = JSON.parseObject(result);
         if(jsonObj.containsKey("errcode")){
             logger.error(" >>> 校验accessToken错误："+ WxConstant.GLOBAL_ERROR_CODE.get(jsonObj.get("errcode")));
-            jsonObj = getNewAccessToken(accountId, accessToken);
+            jsonObj = getNewAccessToken(accountId);
             if (jsonObj == null) return null;
             accessToken = jsonObj.getString("access_token");
+            redisUtil.setHash(WxConstant.WECHAT_ACCESS_TOKEN_KEY,accountId,accessToken);
         }
         return accessToken;
     }
@@ -78,10 +80,9 @@ public class WechatService implements IWechatInter {
     /**
      * 获取新的accessToken
      * @param accountId
-     * @param accessToken
      * @return
      */
-    private JSONObject getNewAccessToken(String accountId, String accessToken) {
+    private JSONObject getNewAccessToken(String accountId) {
         String url;
         String result;
         JSONObject jsonObj;
@@ -93,7 +94,6 @@ public class WechatService implements IWechatInter {
             logger.error(" >>> 错误："+ WxConstant.GLOBAL_ERROR_CODE.get(jsonObj.get("errcode")));
             return null;
         }
-        redisUtil.setHash(WxConstant.WECHAT_ACCESS_TOKEN_KEY,accountId,accessToken);
         return jsonObj;
     }
 }
