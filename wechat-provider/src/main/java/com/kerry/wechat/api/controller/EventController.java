@@ -19,13 +19,12 @@ public class EventController {
 
     /**
      * 用户关注操作
-     * @param element
+     * @param openId
      * @param accountId
      * @return
      */
-    @RequestMapping(value = "/{accountId}/focus", method = RequestMethod.POST)
-    public String focus(@RequestBody Element element,@PathVariable("accountId") String accountId) throws Exception {
-        System.out.println(element.asXML());
-        return eventInter.focus(element,accountId);
+    @RequestMapping(value = "/{accountId}/{openId}/focus", method = RequestMethod.GET)
+    public String focus(@PathVariable("openId") String openId, @PathVariable("accountId") String accountId) throws Exception {
+        return eventInter.focus(openId,accountId);
     }
 }

@@ -159,7 +159,8 @@ public class WechatController {
 
                 break;
             case SUBSCRIBE:// 用户关注了平台
-                resultMsg = eventClient.focus(element,accountModel.getAccountId());
+                String openId = element.elementText("FromUserName");
+                resultMsg = eventClient.focus(openId, accountModel.getAccountId());
                 break;
             case UNSUBSCRIBE:// 用户取消平台的关注
 

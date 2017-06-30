@@ -7,6 +7,7 @@ import com.kerry.wechat.api.WechatAPI;
 import com.kerry.wechat.api.WxConstant;
 import com.kerry.wechat.api.inter.IEventInter;
 import com.kerry.wechat.api.inter.IWechatInter;
+import com.kerry.wechat.api.model.EventScan;
 import com.kerry.wechat.api.model.WechatUser;
 import com.kerry.wechat.inter.ITUserInter;
 import com.kerry.wechat.model.AccountModel;
@@ -42,17 +43,15 @@ public class EventService implements IEventInter {
 
     /**
      * 用户关注
-     * @param element
+     * @param openId
      * @param accountId
      * @return
      */
     @Override
-    public String focus(Element element, String accountId) throws Exception {
-        logger.debug(" >>> 用户关注消息 --> "+element.asXML());
+    public String focus(String openId, String accountId) throws Exception {
         String url;
         String result;
         JSONObject jsonObj;
-        String openId = element.elementText("FromUserName");//获得openId
         String accessToken = wechatInter.getAccessToken(accountId);
         url = WechatAPI.getUserInfoUrl(accessToken,openId);
         result = HttpUtil.httpRequest(url,HttpUtil.METHOD_TYPE_GET, null);
@@ -85,5 +84,16 @@ public class EventService implements IEventInter {
             return wechatInter.focusMsg(accessToken,openId);
         }
         return "";
+    }
+
+    /**
+     * 用户扫码
+     * @param eventScan
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public String scanQrCode(EventScan eventScan) throws Exception {
+        return null;
     }
 }
