@@ -25,6 +25,7 @@ public class EventController {
      */
     @RequestMapping(value = "/{accountId}/focus", method = RequestMethod.POST)
     public String focus(@RequestBody Element element,@PathVariable("accountId") String accountId) throws Exception {
+        System.out.println(element.asXML());
         return eventInter.focus(element,accountId);
     }
 }
