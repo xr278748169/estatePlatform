@@ -80,6 +80,7 @@ public class WechatController {
     @ResponseBody
     public String mssage(HttpServletRequest request,@PathVariable String accountId, HttpServletResponse response) throws UnsupportedEncodingException {
         try {
+            logger.info(" >>> 被调用");
             AccountModel accountModel = (AccountModel) redisUtil.getHash(WxConstant.WECHAT_ACCOUNT_KEY,accountId);
             // 初始化回调信息
             resultMsg = "";
@@ -125,6 +126,7 @@ public class WechatController {
             element = null;
             return;
         }
+        System.out.println(element.asXML());
         switch (msgType) {
             case IMAGE:// 用户发来图片消息
                 // 可对用户发送的图片信息进行下载
@@ -157,7 +159,7 @@ public class WechatController {
 
                 break;
             case SUBSCRIBE:// 用户关注了平台
-                resultMsg = eventClient.focus(element,accountModel);
+                resultMsg = eventClient.focus(element,accountModel.getAccountId());
                 break;
             case UNSUBSCRIBE:// 用户取消平台的关注
 

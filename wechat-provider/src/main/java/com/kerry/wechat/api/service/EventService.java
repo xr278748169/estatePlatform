@@ -43,17 +43,17 @@ public class EventService implements IEventInter {
     /**
      * 用户关注
      * @param element
-     * @param accountModel
+     * @param accountId
      * @return
      */
     @Override
-    public String focus(Element element, AccountModel accountModel) throws Exception {
+    public String focus(Element element, String accountId) throws Exception {
         logger.debug(" >>> 用户关注消息 --> "+element.asXML());
         String url;
         String result;
         JSONObject jsonObj;
         String openId = element.elementText("FromUserName");//获得openId
-        String accessToken = wechatInter.getAccessToken(accountModel.getAccountId());
+        String accessToken = wechatInter.getAccessToken(accountId);
         url = WechatAPI.getUserInfoUrl(accessToken,openId);
         result = HttpUtil.httpRequest(url,HttpUtil.METHOD_TYPE_GET, null);
         jsonObj = JSON.parseObject(result);

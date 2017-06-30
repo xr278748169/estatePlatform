@@ -1,9 +1,5 @@
 package com.kerry.wechat.api.inter;
 
-import com.kerry.wechat.api.model.EventLocation;
-import com.kerry.wechat.api.model.EventScan;
-import com.kerry.wechat.api.model.WechatUser;
-import com.kerry.wechat.model.AccountModel;
 import org.dom4j.Element;
 
 /**
@@ -17,6 +13,6 @@ public interface IEventInter {
      * @param element
      * @return
      */
-    String focus(Element element, AccountModel accountModel) throws Exception;
+    String focus(Element element, String accountId) throws Exception;
 
 }
