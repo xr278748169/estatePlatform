@@ -100,6 +100,9 @@ public class SercretServiceImpl implements SercretService {
         if(!redisUtil.exists(validateClient.getAccessToken())){
             return "-1";//重新登录
         }
+        if(validateClient==null){
+            return "-1";
+        }
         //校验URL是否有权限
         ClientUser clientUser = (ClientUser) redisUtil.get(validateClient.getAccessToken());
         Map<String,Object> resMap = clientUser.getUserRes();
