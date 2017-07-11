@@ -15,6 +15,8 @@ public class TAccount {
 
     private String appsecret;
 
+    private String originalId;
+
     private String accountName;
 
     private String token;
@@ -68,6 +70,14 @@ public class TAccount {
 
     public void setAppsecret(String appsecret) {
         this.appsecret = appsecret;
+    }
+
+    public String getOriginalId() {
+        return originalId;
+    }
+
+    public void setOriginalId(String originalId) {
+        this.originalId = originalId;
     }
 
     public String getAccountName() {
