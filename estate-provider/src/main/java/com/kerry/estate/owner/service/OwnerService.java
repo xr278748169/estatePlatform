@@ -1,40 +1,38 @@
-package com.kerry.estate.base.service;
+package com.kerry.estate.owner.service;
 
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
-import com.kerry.estate.base.inter.ICommunityInter;
-import com.kerry.estate.base.model.CommunityModel;
+import com.kerry.estate.owner.inter.IOwnerInter;
+import com.kerry.estate.owner.model.OwnerModel;
 import org.beetl.sql.core.SQLManager;
 import org.beetl.sql.core.engine.PageQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
 import java.util.List;
 
 /**
- * 小区信息管理
- * Created by wangshen on 2017/7/4.
+ * 业主信息管理
+ * Created by wangshen on 2017/7/20.
  */
 @Service
 @Transactional("txManager")
-public class CommunityService implements ICommunityInter {
+public class OwnerService implements IOwnerInter {
 
     @Autowired
     private SQLManager sqlManager;
 
     /**
      * 保存
-     * @param communityModel
+     * @param ownerModel
      * @return
      * @throws Exception
      */
     @Override
-    public String insert(CommunityModel communityModel) throws Exception {
-        communityModel.setCreateDate(new Date());
-        int num = sqlManager.insert(communityModel);
+    public String insert(OwnerModel ownerModel) throws Exception {
+        int num = sqlManager.insert(ownerModel);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
@@ -43,14 +41,13 @@ public class CommunityService implements ICommunityInter {
 
     /**
      * 修改
-     * @param communityModel
+     * @param ownerModel
      * @return
      * @throws Exception
      */
     @Override
-    public String update(CommunityModel communityModel) throws Exception {
-        communityModel.setUpdateDate(new Date());
-        int num = sqlManager.updateTemplateById(communityModel);
+    public String update(OwnerModel ownerModel) throws Exception {
+        int num = sqlManager.updateTemplateById(ownerModel);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
@@ -65,7 +62,7 @@ public class CommunityService implements ICommunityInter {
      */
     @Override
     public String delete(String id) throws Exception {
-        int num = sqlManager.deleteById(CommunityModel.class, id);
+        int num = sqlManager.deleteById(OwnerModel.class ,id);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
@@ -79,8 +76,8 @@ public class CommunityService implements ICommunityInter {
      * @throws Exception
      */
     @Override
-    public CommunityModel selectById(String id) throws Exception {
-        return sqlManager.unique(CommunityModel.class, id);
+    public OwnerModel selectById(String id) throws Exception {
+        return sqlManager.unique(OwnerModel.class, id);
     }
 
     /**
@@ -90,23 +87,23 @@ public class CommunityService implements ICommunityInter {
      * @throws Exception
      */
     @Override
-    public PageQuery<CommunityModel> findByPage(SearchParams params) throws Exception {
-        PageQuery<CommunityModel> query = new PageQuery<>();
+    public PageQuery<OwnerModel> findByPage(SearchParams params) throws Exception {
+        PageQuery<OwnerModel> query = new PageQuery<>();
         query.setPageNumber(params.getPage());
         query.setPageSize(params.getPageSize());
         query.setParas(params.getParams());
-        sqlManager.pageQuery("communityModel.query",CommunityModel.class,query);
+        sqlManager.pageQuery("ownerModel.query",OwnerModel.class,query);
         return query;
     }
 
     /**
-     * 自定义条件查询
+     * 条件查询
      * @param params
      * @return
+     * @throws Exception
      */
     @Override
-    public List<CommunityModel> findByCondition(CommunityModel params) throws Exception {
+    public List<OwnerModel> findByCondition(OwnerModel params) throws Exception {
         return sqlManager.template(params);
     }
-
 }
