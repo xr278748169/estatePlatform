@@ -1,40 +1,38 @@
-package com.kerry.wechat.service;
+package com.kerry.estate.msg.service;
 
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
-import com.kerry.wechat.inter.ITUserInter;
-import com.kerry.wechat.model.TUserModel;
+import com.kerry.estate.msg.inter.IEssayInter;
+import com.kerry.estate.msg.model.EssayModel;
 import org.beetl.sql.core.SQLManager;
 import org.beetl.sql.core.engine.PageQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
 import java.util.List;
 
 /**
- * 微信关注用户
- * Created by wangshen on 2017/6/26.
+ * 物业新闻消息
+ * Created by wangshen on 2017/7/24.
  */
 @Service
 @Transactional("txManager")
-public class TUserService implements ITUserInter {
+public class EssayService implements IEssayInter {
 
     @Autowired
     private SQLManager sqlManager;
 
     /**
-     * 新增
-     * @param tUserModel
+     * 保存
+     * @param essayModel
      * @return
      * @throws Exception
      */
     @Override
-    public String insert(TUserModel tUserModel) throws Exception {
-        tUserModel.setCreateDate(new Date());
-        int num = sqlManager.insert(tUserModel);
+    public String insert(EssayModel essayModel) throws Exception {
+        int num = sqlManager.insert(essayModel);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
@@ -43,14 +41,13 @@ public class TUserService implements ITUserInter {
 
     /**
      * 修改
-     * @param tUserModel
+     * @param essayModel
      * @return
      * @throws Exception
      */
     @Override
-    public String update(TUserModel tUserModel) throws Exception {
-        tUserModel.setUpdateDate(new Date());
-        int num = sqlManager.updateTemplateById(tUserModel);
+    public String update(EssayModel essayModel) throws Exception {
+        int num = sqlManager.updateTemplateById(essayModel);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
@@ -65,7 +62,7 @@ public class TUserService implements ITUserInter {
      */
     @Override
     public String delete(String id) throws Exception {
-        int num = sqlManager.deleteById(TUserModel.class, id);
+        int num = sqlManager.deleteById(EssayModel.class, id);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
@@ -79,8 +76,8 @@ public class TUserService implements ITUserInter {
      * @throws Exception
      */
     @Override
-    public TUserModel selectById(String id) throws Exception {
-        return sqlManager.unique(TUserModel.class, id);
+    public EssayModel selectById(String id) throws Exception {
+        return sqlManager.unique(EssayModel.class, id);
     }
 
     /**
@@ -90,12 +87,12 @@ public class TUserService implements ITUserInter {
      * @throws Exception
      */
     @Override
-    public PageQuery<TUserModel> findByPage(SearchParams params) throws Exception {
-        PageQuery<TUserModel> query = new PageQuery<>();
+    public PageQuery<EssayModel> findByPage(SearchParams params) throws Exception {
+        PageQuery<EssayModel> query = new PageQuery<>();
         query.setPageNumber(params.getPage());
         query.setPageSize(params.getPageSize());
         query.setParas(params.getParams());
-        sqlManager.pageQuery("tUserModel.query",TUserModel.class,query);
+        sqlManager.pageQuery("essayModel.query",EssayModel.class,query);
         return query;
     }
 
@@ -103,9 +100,10 @@ public class TUserService implements ITUserInter {
      * 条件查询
      * @param params
      * @return
+     * @throws Exception
      */
     @Override
-    public List<TUserModel> findByCondition(TUserModel params) {
+    public List<EssayModel> findByCondition(EssayModel params) throws Exception {
         return sqlManager.template(params);
     }
 }

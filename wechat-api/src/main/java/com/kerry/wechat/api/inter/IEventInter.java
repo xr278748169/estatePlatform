@@ -17,6 +17,15 @@ public interface IEventInter {
     String focus(String openId, String accountId) throws Exception;
 
     /**
+     * 用户取消关注
+     * @param openId
+     * @param accountId
+     * @return
+     * @throws Exception
+     */
+    String unFocus(String openId, String accountId) throws Exception;
+
+    /**
      *
      * @param eventScan
      * @return

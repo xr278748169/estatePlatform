@@ -17,4 +17,6 @@ public interface BaseInter<T> {
     T selectById(String id) throws Exception;
 
     PageQuery<T> findByPage(SearchParams params) throws Exception;
+
+
 }

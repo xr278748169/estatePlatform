@@ -15,4 +15,7 @@ public interface EventClient {
 
     @RequestMapping(value = "/wechat/event/{accountId}/{openId}/focus", method = RequestMethod.GET)
     String focus(@PathVariable("openId") String openId, @PathVariable("accountId") String accountId);
+
+    @RequestMapping(value = "/wechat/event/{accountId}/{openId}/unFocus", method = RequestMethod.GET)
+    String unFocus(@PathVariable("openId") String openId, @PathVariable("accountId") String accountId);
 }

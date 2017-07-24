@@ -13,11 +13,14 @@ import com.kerry.wechat.redis.RedisUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
+ * 微信基础服务
  * Created by wangshen on 2017/6/26.
  */
 @Service
+@Transactional("txManager")
 public class WechatService implements IWechatInter {
 
     private final Logger logger = Logger.getLogger(getClass());
@@ -70,7 +73,7 @@ public class WechatService implements IWechatInter {
         //发送一条欢迎语
         RespMsgTxt respMsgTxt = new RespMsgTxt();
         respMsgTxt.setToUserName(openId);
-        respMsgTxt.setFromUserName(accountModel.getAppid());//微信号
+        respMsgTxt.setFromUserName(accountModel.getOriginalId());//微信原始ID
         respMsgTxt.setContent("欢迎关注！");
         return XmlUtils.msgEncapsulation(respMsgTxt);
     }

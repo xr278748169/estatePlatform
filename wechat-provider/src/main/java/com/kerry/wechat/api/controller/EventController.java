@@ -27,4 +27,15 @@ public class EventController {
     public String focus(@PathVariable("openId") String openId, @PathVariable("accountId") String accountId) throws Exception {
         return eventInter.focus(openId,accountId);
     }
+
+    /**
+     * 用户取消关注操作
+     * @param openId
+     * @param accountId
+     * @return
+     */
+    @RequestMapping(value = "/{accountId}/{openId}/unFocus", method = RequestMethod.GET)
+    public String unFocus(@PathVariable("openId") String openId, @PathVariable("accountId") String accountId) throws Exception {
+        return eventInter.unFocus(openId, accountId);
+    }
 }

@@ -43,6 +43,8 @@ public class TUser {
 
     private Date focusTime;
 
+    private String authBuss;
+
     private String remarks;
 
     private String ext1;
@@ -194,6 +196,14 @@ public class TUser {
 
     public void setFocusTime(Date focusTime) {
         this.focusTime = focusTime;
+    }
+
+    public String getAuthBuss() {
+        return authBuss;
+    }
+
+    public void setAuthBuss(String authBuss) {
+        this.authBuss = authBuss;
     }
 
     public String getRemarks() {

@@ -10,6 +10,11 @@ import java.util.Map;
 public class WxConstant {
 
     /**
+     * 全局统一编码
+     */
+    public static final String ENCODED = "utf-8";
+
+    /**
      * 微信公众号信息key
      */
     public static final String WECHAT_ACCOUNT_KEY = "WECHAT_ACCOUNT";
@@ -29,6 +34,10 @@ public class WxConstant {
      */
     public static final String GET_EVENT_TYPE_KEY = "Event";
 
+    /**
+     * 微信用户唯一标识
+     */
+    public static final String APPLICATION_OPENID_KEY = "openid";
 
     /**
      * 微信消息码信息

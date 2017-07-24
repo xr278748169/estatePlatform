@@ -21,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.net.URLEncoder;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 微信事件处理
@@ -60,9 +61,6 @@ public class EventService implements IEventInter {
             logger.error(" >>> 获取微信用户信息错误："+ WxConstant.GLOBAL_ERROR_CODE.get(jsonObj.get("errcode")));
         }else{
             logger.debug(" >>> 已获取到用户信息："+jsonObj.toJSONString());
-            /**
-             * 保存关注信息
-             */
             TUserModel tUser = new TUserModel();
             tUser.setSubscribe(jsonObj.getString("subscribe"));//是否关注
             tUser.setOpenId(jsonObj.getString("openid"));//openId
@@ -76,14 +74,50 @@ public class EventService implements IEventInter {
             tUser.setSubscribeTime(jsonObj.getString("subscribe_time"));
             tUser.setUnionid(jsonObj.getString("unionid"));
             tUser.setRemarks(jsonObj.getString("remark"));
+            tUser.setAccountId(accountId);
             //设置系统级别参数
             tUser.setIsFocus("1");
             tUser.setFocusTime(new Date());
-            itUserInter.insert(tUser);
+            //查询用户关注信息是否存在
+            TUserModel params = new TUserModel();
+            params.setOpenId(jsonObj.getString("openid"));
+            params.setAccountId(accountId);
+            List<TUserModel> tUserList = itUserInter.findByCondition(params);
+            if(tUserList.size() > 0){
+                tUser.setTuId(tUserList.get(0).getTuId());
+                itUserInter.update(tUser);
+            }else{
+                itUserInter.insert(tUser);
+            }
             //调用回复消息
-            return wechatInter.focusMsg(accessToken,openId);
+            return wechatInter.focusMsg(accountId,openId);
         }
-        return "";
+        return "fail";
+    }
+
+    /**
+     * 用户取消了关注
+     * @param openId
+     * @param accountId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public String unFocus(String openId, String accountId) throws Exception {
+        TUserModel params = new TUserModel();
+        params.setOpenId(openId);
+        params.setAccountId(accountId);
+        List<TUserModel> tUserList = itUserInter.findByCondition(params);
+        if(tUserList.size() > 0){
+            String tuId = tUserList.get(0).getTuId();
+            TUserModel tUser = new TUserModel();
+            tUser.setTuId(tuId);
+            tUser.setSubscribe("0");
+            tUser.setIsFocus("0");
+            itUserInter.update(tUser);
+            return "";
+        }
+        return "fail";
     }
 
     /**

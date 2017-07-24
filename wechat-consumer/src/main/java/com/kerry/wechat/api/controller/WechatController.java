@@ -4,7 +4,6 @@ import com.kerry.utils.SignUtil;
 import com.kerry.wechat.api.MessageType;
 import com.kerry.wechat.api.WxConstant;
 import com.kerry.wechat.api.client.EventClient;
-import com.kerry.wechat.api.inter.IEventInter;
 import com.kerry.wechat.model.AccountModel;
 import com.kerry.wechat.redis.RedisUtil;
 import org.dom4j.Document;
@@ -89,6 +88,7 @@ public class WechatController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        logger.info(" >>> 返回微信消息 --> "+resultMsg);
         return resultMsg;
     }
 
@@ -126,7 +126,7 @@ public class WechatController {
             element = null;
             return;
         }
-        System.out.println(element.asXML());
+        String openId = "";
         switch (msgType) {
             case IMAGE:// 用户发来图片消息
                 // 可对用户发送的图片信息进行下载
@@ -137,11 +137,11 @@ public class WechatController {
 
                 break;
             case LOCATION:// 用户发来地理位置消息
-
+                logger.info(" >>> 用户发来地理位置消息 --> "+element.asXML());
                 break;
             case TEXT:// 用户发来文本消息
                 // 跟根据用户输入的文本信息进行解析并回复
-
+                logger.info(" >>> 用户发来文本消息 --> "+element.asXML());
                 break;
             case VIDEO:// 用户发来视频消息
 
@@ -153,23 +153,24 @@ public class WechatController {
 
                 break;
             case ELOCATION:// 用户通过事件发来地理位置消息
-
+                logger.info(" >>> 用户通过事件发来地理位置消息 --> "+element.asXML());
                 break;
             case SCAN:// 用户扫描二维码
-
+                logger.info(" >>> 用户扫描二维码 --> "+element.asXML());
                 break;
             case SUBSCRIBE:// 用户关注了平台
-                String openId = element.elementText("FromUserName");
+                openId = element.elementText("FromUserName");
                 resultMsg = eventClient.focus(openId, accountModel.getAccountId());
                 break;
             case UNSUBSCRIBE:// 用户取消平台的关注
-
+                openId = element.elementText("FromUserName");
+                resultMsg = eventClient.unFocus(openId, accountModel.getAccountId());
                 break;
             case VIEW:// 用户单击超链接按钮
 
                 break;
             case TEMPLATESENDJOBFINISH:// 接收发送模版消息后的结果
-
+                logger.info(" >>> 发送模版消息后的结果 --> "+element.asXML());
                 break;
             default:
 

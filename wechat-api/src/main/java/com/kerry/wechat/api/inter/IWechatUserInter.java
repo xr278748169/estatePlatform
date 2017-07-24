@@ -5,5 +5,5 @@ package com.kerry.wechat.api.inter;
  */
 public interface IWechatUserInter {
 
-    
+    String oauthUser(String code, String accountId);
 }
