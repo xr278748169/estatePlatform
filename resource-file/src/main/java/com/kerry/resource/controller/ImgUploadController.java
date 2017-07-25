@@ -63,6 +63,9 @@ public class ImgUploadController {
         try {
             file.transferTo(dest);
             //写入到oss
+            if(OSSUtils.ossClient==null){
+                OSSUtils.ossClient = OSSUtils.getOSSClient();
+            }
             String result = OSSUtils.uploadObject2OSS(OSSUtils.ossClient,dest);
             if(result != null && !result.equals("")){
                 logger.info("oss上传结果：" + result);
