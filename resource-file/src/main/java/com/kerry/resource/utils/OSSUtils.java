@@ -23,9 +23,6 @@ public class OSSUtils {
 
     public static String diskName = "estate/files/";
 
-    @Autowired
-    private static ConstantProps constantProps;
-
     /**
      * 实例对象
      */
@@ -34,11 +31,11 @@ public class OSSUtils {
     /**
      * 获取阿里云OSS客户端对象
      * */
-    public static final OSSClient getOSSClient(){
-        return new OSSClient(constantProps.getEndPoint(), constantProps.getAccessKeyId(), constantProps.getAccessKeySecret());
+    public static final OSSClient getOSSClient(String endPoint, String accessKeyId, String accessKeySercet){
+        return new OSSClient(endPoint, accessKeyId, accessKeySercet);
     }
 
-    public static final String uploadObject2OSS(OSSClient client, File file) {
+    public static final String uploadObject2OSS(OSSClient client, File file,String bucketName) {
         String resultStr = null;
         try {
             InputStream is = new FileInputStream(file);
@@ -53,7 +50,7 @@ public class OSSUtils {
             metadata.setContentType(getContentType(fileName));
             metadata.setContentDisposition("filename/filesize=" + fileName + "/" + fileSize + "Byte.");
             //上传文件
-            PutObjectResult putResult = client.putObject(constantProps.getOssBucketName(), diskName + fileName, is, metadata);
+            PutObjectResult putResult = client.putObject(bucketName, diskName + fileName, is, metadata);
             //解析结果
             resultStr = putResult.getETag();
         } catch (Exception e) {

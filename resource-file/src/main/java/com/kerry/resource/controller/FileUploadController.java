@@ -7,10 +7,7 @@ import com.kerry.resource.utils.OSSUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -22,15 +19,15 @@ import java.util.UUID;
  * Created by wangshen on 2017/7/24.
  */
 @RestController
-@RequestMapping("/file/images")
-public class ImgUploadController {
+@RequestMapping("/api/file")
+public class FileUploadController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ImgUploadController.class);
+    private static final Logger logger = LoggerFactory.getLogger(FileUploadController.class);
 
     @Autowired
     private ConstantProps constantProps;
 
-    @RequestMapping(value = "/upload")
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public String upload(@RequestParam("file") MultipartFile file){
         if(file.isEmpty()){
@@ -64,9 +61,10 @@ public class ImgUploadController {
             file.transferTo(dest);
             //写入到oss
             if(OSSUtils.ossClient==null){
-                OSSUtils.ossClient = OSSUtils.getOSSClient();
+                OSSUtils.ossClient = OSSUtils.getOSSClient(constantProps.getEndPoint(),
+                        constantProps.getAccessKeyId(), constantProps.getAccessKeySecret());
             }
-            String result = OSSUtils.uploadObject2OSS(OSSUtils.ossClient,dest);
+            String result = OSSUtils.uploadObject2OSS(OSSUtils.ossClient,dest,constantProps.getOssBucketName());
             if(result != null && !result.equals("")){
                 logger.info("oss上传结果：" + result);
                 String ossFileUrl = constantProps.getOssCustomUrl()+OSSUtils.diskName+fileName;
