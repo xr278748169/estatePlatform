@@ -1,5 +1,6 @@
 package com.kerry.service;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
@@ -107,19 +108,29 @@ public class DictService implements IDictInter {
      */
     @Override
     public String findDictJson() throws Exception {
-        JSONObject jsonObject = new JSONObject();
+        JSONObject result = new JSONObject();
+        JSONObject dictObj = new JSONObject();
+        JSONObject dictArray = new JSONObject();
         List<DictionaryTypeModel> dictTypeList = sqlManager.all(DictionaryTypeModel.class);
         for (DictionaryTypeModel dictType : dictTypeList){
             //组织封装明细
             JSONObject dictJson = new JSONObject();
+            JSONArray jsonArray = new JSONArray();
             DictionaryModel params = new DictionaryModel();
             params.setDictTypeCode(dictType.getDictTypeCode());
             List<DictionaryModel> dictList = sqlManager.template(params);
             for (DictionaryModel dict : dictList){
                 dictJson.put(dict.getDictVaule(),dict.getDictName());
+                JSONObject temp = new JSONObject();
+                temp.put("dictValue", dict.getDictVaule());
+                temp.put("dictName", dict.getDictName());
+                jsonArray.add(temp);
             }
-            jsonObject.put(dictType.getDictTypeCode(),dictJson);
+            dictObj.put(dictType.getDictTypeCode(),dictJson);//对象
+            dictArray.put(dictType.getDictTypeCode(),jsonArray);//数组对象
         }
-        return ResponseEntity.createNormalJsonResponse(jsonObject);
+        result.put("dictObj",dictObj);
+        result.put("dictArray",dictArray);
+        return ResponseEntity.createNormalJsonResponse(result);
     }
 }

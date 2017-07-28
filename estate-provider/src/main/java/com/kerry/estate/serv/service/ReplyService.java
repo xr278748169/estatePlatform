@@ -1,10 +1,10 @@
-package com.kerry.estate.owner.service;
+package com.kerry.estate.serv.service;
 
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
-import com.kerry.estate.owner.inter.IOwnerInter;
-import com.kerry.estate.owner.model.OwnerModel;
+import com.kerry.estate.serv.inter.IReplyInter;
+import com.kerry.estate.serv.model.ReplyModel;
 import org.beetl.sql.core.SQLManager;
 import org.beetl.sql.core.engine.PageQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,26 +15,27 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 业主信息管理
- * Created by wangshen on 2017/7/20.
+ * 回复消息管理
+ * Created by wangshen on 2017/7/27.
  */
 @Service
 @Transactional("txManager")
-public class OwnerService implements IOwnerInter {
+public class ReplyService implements IReplyInter {
 
     @Autowired
     private SQLManager sqlManager;
 
     /**
      * 保存
-     * @param ownerModel
+     * @param replyModel
      * @return
      * @throws Exception
      */
     @Override
-    public String insert(OwnerModel ownerModel) throws Exception {
-        ownerModel.setCreateDate(new Date());
-        int num = sqlManager.insert(ownerModel);
+    public String insert(ReplyModel replyModel) throws Exception {
+        replyModel.setCreateDate(new Date());
+        replyModel.setReDate(new Date());
+        int num = sqlManager.insert(replyModel);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
@@ -43,14 +44,14 @@ public class OwnerService implements IOwnerInter {
 
     /**
      * 修改
-     * @param ownerModel
+     * @param replyModel
      * @return
      * @throws Exception
      */
     @Override
-    public String update(OwnerModel ownerModel) throws Exception {
-        ownerModel.setUpdateDate(new Date());
-        int num = sqlManager.updateTemplateById(ownerModel);
+    public String update(ReplyModel replyModel) throws Exception {
+        replyModel.setUpdateDate(new Date());
+        int num = sqlManager.updateTemplateById(replyModel);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
@@ -65,7 +66,7 @@ public class OwnerService implements IOwnerInter {
      */
     @Override
     public String delete(String id) throws Exception {
-        int num = sqlManager.deleteById(OwnerModel.class ,id);
+        int num = sqlManager.deleteById(ReplyModel.class, id);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
@@ -79,8 +80,8 @@ public class OwnerService implements IOwnerInter {
      * @throws Exception
      */
     @Override
-    public OwnerModel selectById(String id) throws Exception {
-        return sqlManager.unique(OwnerModel.class, id);
+    public ReplyModel selectById(String id) throws Exception {
+        return sqlManager.unique(ReplyModel.class, id);
     }
 
     /**
@@ -90,13 +91,8 @@ public class OwnerService implements IOwnerInter {
      * @throws Exception
      */
     @Override
-    public PageQuery<OwnerModel> findByPage(SearchParams params) throws Exception {
-        PageQuery<OwnerModel> query = new PageQuery<>();
-        query.setPageNumber(params.getPage());
-        query.setPageSize(params.getPageSize());
-        query.setParas(params.getParams());
-        sqlManager.pageQuery("ownerModel.query",OwnerModel.class,query);
-        return query;
+    public PageQuery<ReplyModel> findByPage(SearchParams params) throws Exception {
+        return null;
     }
 
     /**
@@ -106,7 +102,7 @@ public class OwnerService implements IOwnerInter {
      * @throws Exception
      */
     @Override
-    public List<OwnerModel> findByCondition(OwnerModel params) throws Exception {
+    public List<ReplyModel> findByCondition(ReplyModel params) throws Exception {
         return sqlManager.template(params);
     }
 }

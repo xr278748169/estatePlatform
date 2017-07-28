@@ -1,10 +1,14 @@
-package com.kerry.estate.owner.service;
+package com.kerry.estate.serv.service;
 
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
-import com.kerry.estate.owner.inter.IOwnerInter;
-import com.kerry.estate.owner.model.OwnerModel;
+import com.kerry.estate.base.inter.IResFileInter;
+import com.kerry.estate.base.model.ResFileModel;
+import com.kerry.estate.serv.dao.SuitDao;
+import com.kerry.estate.serv.inter.ISuitInter;
+import com.kerry.estate.serv.model.ReplyModel;
+import com.kerry.estate.serv.model.SuitModel;
 import org.beetl.sql.core.SQLManager;
 import org.beetl.sql.core.engine.PageQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,27 +19,36 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 业主信息管理
- * Created by wangshen on 2017/7/20.
+ * 投诉建议
+ * Created by wangshen on 2017/7/27.
  */
 @Service
 @Transactional("txManager")
-public class OwnerService implements IOwnerInter {
+public class SuitService implements ISuitInter {
 
     @Autowired
     private SQLManager sqlManager;
 
+    @Autowired
+    private SuitDao suitDao;
+
+    @Autowired
+    private IResFileInter resFileInter;
+
     /**
      * 保存
-     * @param ownerModel
+     * @param suitModel
      * @return
      * @throws Exception
      */
     @Override
-    public String insert(OwnerModel ownerModel) throws Exception {
-        ownerModel.setCreateDate(new Date());
-        int num = sqlManager.insert(ownerModel);
+    public String insert(SuitModel suitModel) throws Exception {
+        suitModel.setCreateDate(new Date());
+        int num = sqlManager.insert(suitModel);
         if(num > 0){
+            if(suitModel.getResFileList()!=null && suitModel.getResFileList().size()>0){
+                resFileInter.insertBatch(suitModel.getResFileList());
+            }
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
         return ResponseEntity.createErrorJsonResponse(Constant.DATA_RESULT_ERROR);
@@ -43,15 +56,18 @@ public class OwnerService implements IOwnerInter {
 
     /**
      * 修改
-     * @param ownerModel
+     * @param suitModel
      * @return
      * @throws Exception
      */
     @Override
-    public String update(OwnerModel ownerModel) throws Exception {
-        ownerModel.setUpdateDate(new Date());
-        int num = sqlManager.updateTemplateById(ownerModel);
+    public String update(SuitModel suitModel) throws Exception {
+        suitModel.setCreateDate(new Date());
+        int num = sqlManager.updateTemplateById(suitModel);
         if(num > 0){
+            if(suitModel.getResFileList()!=null && suitModel.getResFileList().size()>0){
+                resFileInter.insertBatch(suitModel.getResFileList());
+            }
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
         return ResponseEntity.createErrorJsonResponse(Constant.DATA_RESULT_ERROR);
@@ -65,8 +81,9 @@ public class OwnerService implements IOwnerInter {
      */
     @Override
     public String delete(String id) throws Exception {
-        int num = sqlManager.deleteById(OwnerModel.class ,id);
+        int num = sqlManager.deleteById(SuitModel.class, id);
         if(num > 0){
+            resFileInter.deleteByBussId(id);
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
         return ResponseEntity.createErrorJsonResponse(Constant.DATA_RESULT_ERROR);
@@ -79,8 +96,13 @@ public class OwnerService implements IOwnerInter {
      * @throws Exception
      */
     @Override
-    public OwnerModel selectById(String id) throws Exception {
-        return sqlManager.unique(OwnerModel.class, id);
+    public SuitModel selectById(String id) throws Exception {
+        SuitModel suitModel = suitDao.selectById(id);
+        //查询资源文件
+        ResFileModel params = new ResFileModel();
+        params.setBussId(suitModel.getStId());
+        suitModel.setResFileList(resFileInter.findByCondition(params));
+        return suitModel;
     }
 
     /**
@@ -90,12 +112,12 @@ public class OwnerService implements IOwnerInter {
      * @throws Exception
      */
     @Override
-    public PageQuery<OwnerModel> findByPage(SearchParams params) throws Exception {
-        PageQuery<OwnerModel> query = new PageQuery<>();
+    public PageQuery<SuitModel> findByPage(SearchParams params) throws Exception {
+        PageQuery<SuitModel> query = new PageQuery<>();
         query.setPageNumber(params.getPage());
         query.setPageSize(params.getPageSize());
         query.setParas(params.getParams());
-        sqlManager.pageQuery("ownerModel.query",OwnerModel.class,query);
+        sqlManager.pageQuery("suitModel.query",SuitModel.class,query);
         return query;
     }
 
@@ -106,7 +128,7 @@ public class OwnerService implements IOwnerInter {
      * @throws Exception
      */
     @Override
-    public List<OwnerModel> findByCondition(OwnerModel params) throws Exception {
+    public List<SuitModel> findByCondition(SuitModel params) throws Exception {
         return sqlManager.template(params);
     }
 }

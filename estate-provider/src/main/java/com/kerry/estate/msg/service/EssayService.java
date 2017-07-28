@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -32,6 +33,7 @@ public class EssayService implements IEssayInter {
      */
     @Override
     public String insert(EssayModel essayModel) throws Exception {
+        essayModel.setCreateDate(new Date());
         int num = sqlManager.insert(essayModel);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
@@ -47,6 +49,7 @@ public class EssayService implements IEssayInter {
      */
     @Override
     public String update(EssayModel essayModel) throws Exception {
+        essayModel.setUpdateDate(new Date());
         int num = sqlManager.updateTemplateById(essayModel);
         if(num > 0){
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);

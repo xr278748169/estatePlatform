@@ -1,37 +1,24 @@
-package com.kerry.estate.msg.model.base;
+package com.kerry.estate.serv.model.base;
 
 import org.beetl.sql.core.annotatoin.AssignID;
 
 import java.util.Date;
 
-/**
- * Created by wangshen on 2017/7/24.
- */
-public class Essay {
+public class Repairs {
 
-    private String id;
-
-    private String msgType;
+    private String reId;
 
     private String title;
 
-    private String thumbUrl;
-
-    private String author;
-
-    private String digest;
-
     private String content;
 
-    private String sourceUrl;
+    private String ownId;
 
-    private Date releaseDate;
+    private Date reDate;
 
-    private Integer orderNum;
+    private String comId;
 
-    private Integer isStick;
-
-    private Integer isShow;
+    private String state;
 
     private String authCode;
 
@@ -52,20 +39,12 @@ public class Essay {
     private Date updateDate;
 
     @AssignID("pkId")
-    public String getId() {
-        return id;
+    public String getReId() {
+        return reId;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getMsgType() {
-        return msgType;
-    }
-
-    public void setMsgType(String msgType) {
-        this.msgType = msgType;
+    public void setReId(String reId) {
+        this.reId = reId;
     }
 
     public String getTitle() {
@@ -76,30 +55,6 @@ public class Essay {
         this.title = title;
     }
 
-    public String getThumbUrl() {
-        return thumbUrl;
-    }
-
-    public void setThumbUrl(String thumbUrl) {
-        this.thumbUrl = thumbUrl;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getDigest() {
-        return digest;
-    }
-
-    public void setDigest(String digest) {
-        this.digest = digest;
-    }
-
     public String getContent() {
         return content;
     }
@@ -108,44 +63,36 @@ public class Essay {
         this.content = content;
     }
 
-    public String getSourceUrl() {
-        return sourceUrl;
+    public String getOwnId() {
+        return ownId;
     }
 
-    public void setSourceUrl(String sourceUrl) {
-        this.sourceUrl = sourceUrl;
+    public void setOwnId(String ownId) {
+        this.ownId = ownId;
     }
 
-    public Date getReleaseDate() {
-        return releaseDate;
+    public Date getReDate() {
+        return reDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setReDate(Date reDate) {
+        this.reDate = reDate;
     }
 
-    public Integer getOrderNum() {
-        return orderNum;
+    public String getComId() {
+        return comId;
     }
 
-    public void setOrderNum(Integer orderNum) {
-        this.orderNum = orderNum;
+    public void setComId(String comId) {
+        this.comId = comId;
     }
 
-    public Integer getIsStick() {
-        return isStick;
+    public String getState() {
+        return state;
     }
 
-    public void setIsStick(Integer isStick) {
-        this.isStick = isStick;
-    }
-
-    public Integer getIsShow() {
-        return isShow;
-    }
-
-    public void setIsShow(Integer isShow) {
-        this.isShow = isShow;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getAuthCode() {
