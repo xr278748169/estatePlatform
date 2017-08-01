@@ -122,8 +122,8 @@ public class DictService implements IDictInter {
             for (DictionaryModel dict : dictList){
                 dictJson.put(dict.getDictVaule(),dict.getDictName());
                 JSONObject temp = new JSONObject();
-                temp.put("dictValue", dict.getDictVaule());
-                temp.put("dictName", dict.getDictName());
+                temp.put("value", dict.getDictVaule());
+                temp.put("label", dict.getDictName());
                 jsonArray.add(temp);
             }
             dictObj.put(dictType.getDictTypeCode(),dictJson);//对象
