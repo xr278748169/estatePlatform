@@ -1,6 +1,7 @@
 package com.kerry.estate.owner.inter;
 
 import com.kerry.estate.BaseInter;
+import com.kerry.estate.dto.AuthDto;
 import com.kerry.estate.owner.model.OwnerModel;
 
 /**
@@ -9,4 +10,11 @@ import com.kerry.estate.owner.model.OwnerModel;
  */
 public interface IOwnerInter extends BaseInter<OwnerModel> {
 
+    /**
+     * 业主认证处理
+     * @param authDto
+     * @return
+     * @throws Exception
+     */
+    String ownAuth(AuthDto authDto) throws Exception;
 }

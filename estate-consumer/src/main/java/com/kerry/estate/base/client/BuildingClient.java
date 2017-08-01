@@ -1,5 +1,6 @@
 package com.kerry.estate.base.client;
 
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.core.SearchParams;
 import com.kerry.estate.base.model.BuildingModel;
 import org.beetl.sql.core.engine.PageQuery;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 /**
  * 楼宇管理
@@ -30,4 +33,10 @@ public interface BuildingClient {
 
     @RequestMapping(value = "/building/select/{id}", method = RequestMethod.GET)
     BuildingModel selectById(@PathVariable("id") String id);
+
+    @RequestMapping(value = "/building/find", method = RequestMethod.POST)
+    List<BuildingModel> findByCondition(@RequestBody BuildingModel params);
+
+    @RequestMapping(value = "/building/{comId}/json", method = RequestMethod.GET)
+    List<JSONObject> findAllToJson(@PathVariable("comId") String comId);
 }

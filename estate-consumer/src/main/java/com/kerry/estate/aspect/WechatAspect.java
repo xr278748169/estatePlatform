@@ -1,6 +1,7 @@
 package com.kerry.estate.aspect;
 
-import com.kerry.estate.client.SercretClient;
+import com.alibaba.fastjson.JSONObject;
+import com.kerry.estate.client.WechatUserCacheClient;
 import com.kerry.model.ClientUser;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -14,24 +15,24 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
- * 拦截只拦截后台的接口，前台接口不进行拦截，
- * 开发时注意不要将前后端接口混用
- * Created by wangshen on 2017/7/4.
+ * 微信页面校验器
+ * Created by wangshen on 2017/7/31.
  */
 @Aspect
 @Configuration
-public class EstateApiAspect {
+public class WechatAspect {
 
-    private static final Logger logger = LoggerFactory.getLogger(EstateApiAspect.class);
+    private static final Logger logger = LoggerFactory.getLogger(WechatAspect.class);
 
     @Autowired
-    private SercretClient sercretClient;
+    private WechatUserCacheClient wechatUserCacheClient;
 
     /**
-     * 声明切入点，只处理controller
+     * 声明切入点，只处理web
      */
-    @Pointcut("execution(* com.kerry.estate.*.controller.*.*(..))")
+    @Pointcut("execution(* com.kerry.estate.*.web.*.*(..))")
     private void pointCutMethod() {
     }
 
@@ -57,6 +58,7 @@ public class EstateApiAspect {
     public void doAfter() {
     }
 
+
     /**
      * 环绕通知
      * @param pjp
@@ -73,27 +75,32 @@ public class EstateApiAspect {
         String uri = request.getRequestURI();
         String queryString = request.getQueryString();
         logger.debug(" --- request start params --> url: {}, method: {}, uri: {}, params: {}", url, method, uri, queryString);
+        //根据用户的token换取用户的微信编号
         /**
-         * 校验登录信息
+         * 校验系统授权信息
          */
         HttpServletResponse response = sra.getResponse();
         String authorization = request.getHeader("Authorization");
         if(authorization==null||authorization.equals("")){
-            logger.debug(" --- 未进行登录授权");
+            logger.info(" --- 微信未进行授权");
             response.setCharacterEncoding("utf-8");
-            response.setStatus(-1);//-1去登录
+            response.setStatus(403);
+            response.getWriter().write("<body style='font-size:20'>Http Status: 403 未进行授权</body>");
             return null;
         }
-        ClientUser clientUser = sercretClient.getClientUser(authorization);
-        if(clientUser==null){
-            logger.debug(" --- 登录授权信息已过期");
+        String userCache = wechatUserCacheClient.getUserCache(authorization);
+        if(userCache==null || userCache.equals("")){
+            logger.info(" --- 微信授权信息已过期");
             response.setCharacterEncoding("utf-8");
-            response.setStatus(-1);//-1去登录
+            response.setStatus(403);
+            response.getWriter().write("<body style='font-size:20'>Http Status: 授权信息已过期</body>");
             return null;
         }
-        String code = clientUser.getAuthCode();
-        request.setAttribute("code", code);//设置数据标识码
-        request.setAttribute("userId",clientUser.getCode());
+        JSONObject cacheJson = JSONObject.parseObject(userCache);
+        String accountId = cacheJson.getString("accountId");
+        String tuId = cacheJson.getString("tuId");
+        request.setAttribute("accountId", accountId);
+        request.setAttribute("tuId", tuId);//微信用户ID
         Object o = pjp.proceed();
         return o;
     }

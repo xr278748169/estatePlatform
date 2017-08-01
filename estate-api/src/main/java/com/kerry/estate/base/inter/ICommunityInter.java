@@ -1,9 +1,8 @@
 package com.kerry.estate.base.inter;
 
-import com.kerry.core.SearchParams;
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.estate.BaseInter;
 import com.kerry.estate.base.model.CommunityModel;
-import org.beetl.sql.core.engine.PageQuery;
 
 import java.util.List;
 
@@ -13,5 +12,7 @@ import java.util.List;
  */
 public interface ICommunityInter extends BaseInter<CommunityModel> {
 
+    List<CommunityModel> findAll() throws Exception;
 
+    List<JSONObject> findAllToJson() throws Exception;
 }

@@ -1,6 +1,7 @@
 package com.kerry.estate.base.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.core.SearchParams;
 import com.kerry.estate.base.inter.ICommunityInter;
 import com.kerry.estate.base.model.CommunityModel;
@@ -12,6 +13,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * 小区管理
@@ -46,6 +48,16 @@ public class CommunityController {
         PageQuery query = communityInter.findByPage(params);
         logger.info("/community/list, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + JSON.toJSONString(query));
         return query;
+    }
+
+    /**
+     * 查询全部
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/all", method = RequestMethod.POST)
+    public List<CommunityModel> findAll() throws Exception {
+        return communityInter.findAll();
     }
 
     /**
@@ -92,5 +104,26 @@ public class CommunityController {
     @RequestMapping(value = "/select/{id}", method = RequestMethod.GET)
     public CommunityModel selectById(@PathVariable("id") String id) throws Exception {
         return communityInter.selectById(id);
+    }
+
+    /**
+     * 条件查询
+     * @param params
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/find", method = RequestMethod.POST)
+    public List<CommunityModel> findByCondition(@RequestBody CommunityModel params) throws Exception {
+        return communityInter.findByCondition(params);
+    }
+
+    /**
+     * 查询全部转为json
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/all/json", method = RequestMethod.GET)
+    public List<JSONObject> findAllToJson() throws Exception {
+        return communityInter.findAllToJson();
     }
 }

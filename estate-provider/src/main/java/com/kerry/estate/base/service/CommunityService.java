@@ -1,5 +1,6 @@
 package com.kerry.estate.base.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
@@ -11,8 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * 小区信息管理
@@ -107,6 +107,34 @@ public class CommunityService implements ICommunityInter {
     @Override
     public List<CommunityModel> findByCondition(CommunityModel params) throws Exception {
         return sqlManager.template(params);
+    }
+
+    /**
+     * 查询全部
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<CommunityModel> findAll() throws Exception {
+        return sqlManager.all(CommunityModel.class);
+    }
+
+    /**
+     * 查询全部并且转为options选择需要的数据
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<JSONObject> findAllToJson() throws Exception {
+        List<JSONObject> result = new ArrayList<>();
+        List<CommunityModel> comList = sqlManager.all(CommunityModel.class);
+        for (CommunityModel com : comList) {
+            JSONObject comJson = new JSONObject();
+            comJson.put("value", com.getComId());
+            comJson.put("label", com.getComName());
+            result.add(comJson);
+        }
+        return result;
     }
 
 }

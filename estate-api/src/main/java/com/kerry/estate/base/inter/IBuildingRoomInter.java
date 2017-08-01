@@ -1,5 +1,6 @@
 package com.kerry.estate.base.inter;
 
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.estate.BaseInter;
 import com.kerry.estate.base.model.BuildingRoomModel;
 
@@ -16,4 +17,6 @@ public interface IBuildingRoomInter extends BaseInter<BuildingRoomModel> {
      * @param brList
      */
     void insertBatch(List<BuildingRoomModel> brList) throws Exception;
+
+    List<JSONObject> findByConditionToJson(BuildingRoomModel params) throws Exception;
 }

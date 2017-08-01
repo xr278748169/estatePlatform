@@ -1,5 +1,6 @@
 package com.kerry.estate.base.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -154,4 +156,26 @@ public class BuildingService implements IBuildingInter {
         return sqlManager.template(params);
     }
 
+    /**
+     * 查询全部转为json
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<JSONObject> findAllToJson(String comId) throws Exception {
+        List<JSONObject> result = new ArrayList<>();
+        BuildingModel params = new BuildingModel();
+        params.setComId(comId);
+        List<BuildingModel> budList = this.findByCondition(params);
+        Collections.sort(budList,(o1, o2) -> (o1.getBudName().compareTo(o2.getBudName())));
+        for (BuildingModel bud : budList) {
+            JSONObject budJson = new JSONObject();
+            budJson.put("value", bud.getBudId());
+            budJson.put("label", bud.getBudName()+"号楼");
+            budJson.put("cells", bud.getCells());
+            budJson.put("floors", bud.getFloors());
+            result.add(budJson);
+        }
+        return result;
+    }
 }

@@ -1,5 +1,6 @@
 package com.kerry.estate.base.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -128,5 +131,27 @@ public class BuildingRoomService implements IBuildingRoomInter {
     @Override
     public void insertBatch(List<BuildingRoomModel> brList) throws Exception {
         sqlManager.insertBatch(BuildingRoomModel.class, brList);
+    }
+
+    /**
+     * 根据条件查询并且转为json
+     * @param params
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<JSONObject> findByConditionToJson(BuildingRoomModel params) throws Exception {
+        List<JSONObject> result = new ArrayList<>();
+        List<BuildingRoomModel> brList = this.findByCondition(params);
+        Collections.sort(brList,(o1 , o2) -> (o1.getCellName().compareTo(o2.getCellName())));
+        for(BuildingRoomModel br : brList) {
+            JSONObject brJson = new JSONObject();
+            brJson.put("value", br.getBurId());
+            brJson.put("label", br.getRoomName()+"号");
+            brJson.put("cell", br.getCellName());
+            brJson.put("floor", br.getFloor());
+            result.add(brJson);
+        }
+        return result;
     }
 }

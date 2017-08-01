@@ -28,5 +28,4 @@ public class WechatUserController {
     public String oauthUser(@PathVariable("code") String code, @PathVariable("accountId") String accountId) throws Exception {
         return wechatUserInter.oauthUser(code, accountId);
     }
-
 }

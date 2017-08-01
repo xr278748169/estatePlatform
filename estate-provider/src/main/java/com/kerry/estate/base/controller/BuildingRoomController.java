@@ -1,6 +1,7 @@
 package com.kerry.estate.base.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.core.SearchParams;
 import com.kerry.estate.base.inter.IBuildingRoomInter;
 import com.kerry.estate.base.model.BuildingRoomModel;
@@ -12,6 +13,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * 楼宇房间管理
@@ -92,5 +94,27 @@ public class BuildingRoomController {
     @RequestMapping(value = "/select/{id}", method = RequestMethod.GET)
     public BuildingRoomModel selectById(@PathVariable("id") String id) throws Exception {
         return buildingRoomInter.selectById(id);
+    }
+
+    /**
+     * 条件查询
+     * @param params
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/find", method = RequestMethod.POST)
+    public List<BuildingRoomModel> findByCondition(@RequestBody BuildingRoomModel params) throws Exception {
+        return buildingRoomInter.findByCondition(params);
+    }
+
+    /**
+     * 按条件转为json
+     * @param params
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/find/json", method = RequestMethod.POST)
+    public List<JSONObject> findByConditionToJson(@RequestBody BuildingRoomModel params) throws Exception {
+        return buildingRoomInter.findByConditionToJson(params);
     }
 }
