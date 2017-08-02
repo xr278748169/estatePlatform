@@ -1,8 +1,17 @@
 package com.kerry.estate.owner.service;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
+import com.kerry.estate.base.inter.IBuildingRoomInter;
+import com.kerry.estate.base.inter.ICommunityInter;
+import com.kerry.estate.base.model.BuildingRoomModel;
+import com.kerry.estate.base.model.CommunityModel;
+import com.kerry.estate.client.CaptchaClient;
+import com.kerry.estate.client.TUserClient;
+import com.kerry.estate.dto.AuthDto;
 import com.kerry.estate.owner.inter.IOwnerInter;
 import com.kerry.estate.owner.model.OwnerModel;
 import org.beetl.sql.core.SQLManager;
@@ -24,6 +33,18 @@ public class OwnerService implements IOwnerInter {
 
     @Autowired
     private SQLManager sqlManager;
+
+    @Autowired
+    private CaptchaClient captchaClient;
+
+    @Autowired
+    private ICommunityInter communityInter;
+
+    @Autowired
+    private IBuildingRoomInter buildingRoomInter;
+
+    @Autowired
+    private TUserClient tUserClient;
 
     /**
      * 保存
@@ -108,5 +129,96 @@ public class OwnerService implements IOwnerInter {
     @Override
     public List<OwnerModel> findByCondition(OwnerModel params) throws Exception {
         return sqlManager.template(params);
+    }
+
+    /**
+     * 业主认证
+     * @param authDto
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public String ownAuth(AuthDto authDto) throws Exception {
+        String telephone = authDto.getTelephone();
+        String authCode = authDto.getAuthCode();
+        JSONObject smsCodeResult = JSON.parseObject(captchaClient.verifySmsCode(telephone, authCode));
+        if(!smsCodeResult.getString("code").equals("0")){
+            return smsCodeResult.toJSONString();
+        }
+        String comId="",budId="",burId="";
+        //检查业主信息中是否存在认证信息
+        OwnerModel ownParams = new OwnerModel();
+        ownParams.setIdNumber(authDto.getIdNumber());
+        ownParams.setTelephone(authDto.getTelephone());
+        if(this.findByCondition(ownParams).size()>0){
+            return ResponseEntity.createErrorJsonResponse("您的信息已进行过认证");
+        }
+        if(authDto.getOwnType().equals("owner")){//户主认证时检查房号状态
+            if(authDto.getComId().equals("") || authDto.getBudId().equals("") || authDto.getBurId().equals("")){
+                return ResponseEntity.createErrorJsonResponse("户主请选择物业信息");
+            }
+            //检查房号是否被认证
+            BuildingRoomModel params = new BuildingRoomModel();
+            params.setBudId(authDto.getBudId());
+            params.setBurId(authDto.getBurId());
+            params.setState("1");//表示只检查锁定的
+            if(buildingRoomInter.findByCondition(params).size()>0){
+                return ResponseEntity.createErrorJsonResponse("您选择的房号已被认证");
+            }
+            comId = authDto.getComId();
+            budId = authDto.getBudId();
+            burId = authDto.getBurId();
+        }else{//非户主规则
+            if(authDto.getVisitCode().equals("")){
+                return ResponseEntity.createErrorJsonResponse("非户主请输入邀请码");
+            }
+            //根据邀请码获取户主物业信息
+            ownParams = new OwnerModel();
+            ownParams.setVisitCode(authDto.getVisitCode());
+            List<OwnerModel> ownerList = this.findByCondition(ownParams);
+            if(ownerList.size()==0){
+                return ResponseEntity.createErrorJsonResponse("邀请码错误");
+            }
+            //设置物业信息
+            OwnerModel owner = ownerList.get(0);
+            comId = owner.getComId();
+            budId = owner.getBudId();
+            burId = owner.getBurId();
+        }
+        if(comId.equals("") || budId.equals("") || burId.equals("")){
+            return ResponseEntity.createErrorJsonResponse("未获取到您的物业信息");
+        }
+        //获取小区信息
+        CommunityModel community = communityInter.selectById(comId);
+        //组织写入业主信息
+        OwnerModel ownerModel = new OwnerModel();
+        ownerModel.setOwnType(authDto.getOwnType());
+        ownerModel.setOwnName(authDto.getOwnName());
+        ownerModel.setIdNumber(authDto.getIdNumber());
+        ownerModel.setTelephone(authDto.getTelephone());
+        ownerModel.setComId(comId);
+        ownerModel.setBudId(budId);
+        ownerModel.setBurId(burId);
+        ownerModel.setTuId(authDto.getTuId());//用户微信编号
+        ownerModel.setOwnState("1");//正常
+        ownerModel.setAuthState("0");//申请认证
+        ownerModel.setAuthCode(community.getAuthCode());//数据权限码对应到小区
+        ownerModel.setCreateDate(new Date());
+        ownerModel.setCreateUser(authDto.getTuId());
+        int num = sqlManager.insert(ownerModel);
+        if(num > 0){
+            //业主类型为户主的锁定房号
+            if(authDto.getOwnType().equals("owner")){
+                BuildingRoomModel params = new BuildingRoomModel();
+                params.setBurId(authDto.getBurId());
+                params.setState("1");//锁定号
+                buildingRoomInter.update(params);
+            }
+            //修改微信用户表中的业务认证状态，同业务状态一致
+            tUserClient.updateBussState(authDto.getTuId(),"0");
+
+            return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
+        }
+        return ResponseEntity.createErrorJsonResponse(Constant.DATA_RESULT_ERROR);
     }
 }

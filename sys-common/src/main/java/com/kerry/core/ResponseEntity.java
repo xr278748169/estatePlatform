@@ -54,6 +54,10 @@ public class ResponseEntity<T> implements Serializable {
         return JSONObject.toJSON(new ResponseEntity<String>(ResponseEntity.FAIL, msg)).toString();
     }
 
+    public static final String createErrorJsonResponse(JSONObject jsonObject) {
+        return JSONObject.toJSON(new ResponseEntity<JSONObject>(ResponseEntity.FAIL, jsonObject)).toString();
+    }
+
     public static final String createDuplicationJsonResponse(String msg) {
         return JSONObject.toJSON(new ResponseEntity<String>(ResponseEntity.DUB, msg)).toString();
     }

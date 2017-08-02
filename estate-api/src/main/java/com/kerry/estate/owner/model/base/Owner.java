@@ -28,6 +28,8 @@ public class Owner {
 
     private String authState;
 
+    private String visitCode;
+
     private String authCode;
 
     private String remarks;
@@ -133,6 +135,14 @@ public class Owner {
 
     public void setAuthState(String authState) {
         this.authState = authState;
+    }
+
+    public String getVisitCode() {
+        return visitCode;
+    }
+
+    public void setVisitCode(String visitCode) {
+        this.visitCode = visitCode;
     }
 
     public String getAuthCode() {

@@ -142,8 +142,9 @@ public class BuildingRoomService implements IBuildingRoomInter {
     @Override
     public List<JSONObject> findByConditionToJson(BuildingRoomModel params) throws Exception {
         List<JSONObject> result = new ArrayList<>();
+        params.setState("0");//只查询出正常的房号
         List<BuildingRoomModel> brList = this.findByCondition(params);
-        Collections.sort(brList,(o1 , o2) -> (o1.getCellName().compareTo(o2.getCellName())));
+        Collections.sort(brList, (o1 , o2) -> (o1.getCellName().compareTo(o2.getCellName())));
         for(BuildingRoomModel br : brList) {
             JSONObject brJson = new JSONObject();
             brJson.put("value", br.getBurId());
@@ -152,6 +153,7 @@ public class BuildingRoomService implements IBuildingRoomInter {
             brJson.put("floor", br.getFloor());
             result.add(brJson);
         }
+        Collections.sort(result, (o1, o2) -> (o1.getString("label").compareTo(o2.getString("label"))));
         return result;
     }
 }

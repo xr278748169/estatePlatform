@@ -15,6 +15,8 @@ public class BuildingRoom {
 
     private String roomName;
 
+    private String state;
+
     private String authCode;
 
     private String remarks;
@@ -72,6 +74,14 @@ public class BuildingRoom {
 
     public void setRoomName(String roomName) {
         this.roomName = roomName == null ? null : roomName.trim();
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getAuthCode() {

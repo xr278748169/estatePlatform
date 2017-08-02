@@ -1,5 +1,10 @@
 package com.kerry.estate.dto;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.NotNull;
+
+
 /**
  * 移动端业主认证传输对象
  * Created by wangshen on 2017/8/1.
@@ -10,22 +15,30 @@ public class AuthDto {
 
     private String budId;
 
-    private String cell;
+    private String burId;
 
-    private String floor;
+    private String tuId;//微信用户表示
 
-    private String tuId;
-
+    @NotNull(message = "请选择业主类型")
+    @NotBlank(message = "请选择业主类型")
     private String ownType;
 
+    @NotNull(message = "请输入业主姓名")
+    @NotBlank(message = "请输入业主姓名")
     private String ownName;
 
+    @NotNull(message = "请输入身份证号码")
+    @NotBlank(message = "请输入身份证号码")
     private String idNumber;
 
+    @NotNull(message = "请输入联系电话")
+    @NotBlank(message = "请输入联系电话")
     private String telephone;
 
     private String visitCode;
 
+    @NotNull(message = "请输入短信验证码")
+    @NotBlank(message = "请输入短信验证码")
     private String authCode;
 
     public String getComId() {
@@ -44,20 +57,12 @@ public class AuthDto {
         this.budId = budId;
     }
 
-    public String getCell() {
-        return cell;
+    public String getBurId() {
+        return burId;
     }
 
-    public void setCell(String cell) {
-        this.cell = cell;
-    }
-
-    public String getFloor() {
-        return floor;
-    }
-
-    public void setFloor(String floor) {
-        this.floor = floor;
+    public void setBurId(String burId) {
+        this.burId = burId;
     }
 
     public String getTuId() {
@@ -115,4 +120,7 @@ public class AuthDto {
     public void setAuthCode(String authCode) {
         this.authCode = authCode;
     }
+
+
+
 }
