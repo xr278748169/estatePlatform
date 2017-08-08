@@ -12,7 +12,7 @@ import com.alibaba.fastjson.JSONObject;
 public class VerifyParse {
 
     /**
-     *
+     * 解析错误信息
      * @param errorStr
      * @return
      */

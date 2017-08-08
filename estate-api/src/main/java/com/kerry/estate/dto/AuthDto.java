@@ -121,6 +121,19 @@ public class AuthDto {
         this.authCode = authCode;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "AuthDto{" +
+                "comId='" + comId + '\'' +
+                ", budId='" + budId + '\'' +
+                ", burId='" + burId + '\'' +
+                ", tuId='" + tuId + '\'' +
+                ", ownType='" + ownType + '\'' +
+                ", ownName='" + ownName + '\'' +
+                ", idNumber='" + idNumber + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", visitCode='" + visitCode + '\'' +
+                ", authCode='" + authCode + '\'' +
+                '}';
+    }
 }

@@ -30,7 +30,7 @@ public class SmsUtils {
             SmsSingleSenderResult singleSenderResult;
             singleSenderResult = singleSender.sendWithParam("86", phone, tmplId, params, "", "", "");
             JSONObject resultJson = JSONObject.parseObject(singleSenderResult.toString());
-            if(resultJson.containsKey("errMsg")&&resultJson.get("errMsg").equals("ok")){
+            if(resultJson.containsKey("errMsg")&&resultJson.get("errMsg").equals("OK")){
                 return "ok";
             }
             return "";

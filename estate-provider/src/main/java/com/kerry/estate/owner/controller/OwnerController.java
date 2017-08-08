@@ -2,6 +2,7 @@ package com.kerry.estate.owner.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.kerry.core.SearchParams;
+import com.kerry.estate.dto.AuthDto;
 import com.kerry.estate.owner.inter.IOwnerInter;
 import com.kerry.estate.owner.model.OwnerModel;
 import org.apache.log4j.Logger;
@@ -91,5 +92,16 @@ public class OwnerController {
     @RequestMapping(value = "/select/{id}", method = RequestMethod.GET)
     public OwnerModel selectById(@PathVariable("id") String id) throws Exception {
         return ownerInter.selectById(id);
+    }
+
+    /**
+     * 业主认证
+     * @param authDto
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/auth", method = RequestMethod.POST)
+    public String ownAuth(@RequestBody AuthDto authDto) throws Exception {
+        return ownerInter.ownAuth(authDto);
     }
 }

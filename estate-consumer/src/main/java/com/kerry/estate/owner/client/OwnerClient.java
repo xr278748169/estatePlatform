@@ -1,6 +1,7 @@
 package com.kerry.estate.owner.client;
 
 import com.kerry.core.SearchParams;
+import com.kerry.estate.dto.AuthDto;
 import com.kerry.estate.owner.model.OwnerModel;
 import org.beetl.sql.core.engine.PageQuery;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -30,4 +31,7 @@ public interface OwnerClient {
 
     @RequestMapping(value = "/owner/select/{id}", method = RequestMethod.GET)
     OwnerModel selectById(@PathVariable("id") String id);
+
+    @RequestMapping(value = "/owner/auth", method = RequestMethod.POST)
+    String ownAuth(@RequestBody AuthDto authDto);
 }

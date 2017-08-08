@@ -40,7 +40,7 @@ public class CaptchaServiceImpl implements ICaptchaService {
         int authCode = RandomStr.getRandNum(0, 999999);
         redisUtil.set(telephone,authCode,AUTH_CODE_INVALID_TIME);
         ArrayList<String> params = new ArrayList<>();
-        params.add(telephone);
+        params.add(authCode+"");
         params.add("10");
         String result = SmsUtils.sendSms(13975, telephone, params);
         if(result.equals("ok")){
