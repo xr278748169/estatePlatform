@@ -46,11 +46,10 @@ public class OwnAuthRestful {
 
     @ResponseBody
     public String ownAuth(@Valid @RequestBody AuthDto authDto, BindingResult result, HttpServletRequest request){
-        System.out.println(authDto.toString());
         if (result.hasErrors()) {
             return ValidFactory.message(result);
         }
-        authDto.setTuId(request.getParameter("tuId"));
+        authDto.setTuId(request.getAttribute("tuId").toString());
         return ownerClient.ownAuth(authDto);
     }
 }

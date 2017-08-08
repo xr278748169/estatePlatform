@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "wechat-provider")
 public interface TUserClient {
 
-    @RequestMapping(value = "/update/{tuId}/{state}", method = RequestMethod.GET)
+    @RequestMapping(value = "/tuser/update/{tuId}/{state}", method = RequestMethod.GET)
     String updateBussState(@PathVariable("tuId") String tuId, @PathVariable("state") String state);
 }
