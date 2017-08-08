@@ -76,31 +76,31 @@ public class WechatAspect {
         String queryString = request.getQueryString();
         logger.debug(" --- request start params --> url: {}, method: {}, uri: {}, params: {}", url, method, uri, queryString);
         //根据用户的token换取用户的微信编号
-        /**
-         * 校验系统授权信息
-         */
-        HttpServletResponse response = sra.getResponse();
-        String authorization = request.getHeader("Authorization");
-        if(authorization==null||authorization.equals("")){
-            logger.info(" --- 微信未进行授权");
-            response.setCharacterEncoding("utf-8");
-            response.setStatus(403);
-            response.getWriter().write("<body style='font-size:20'>Http Status: 403 未进行授权</body>");
-            return null;
-        }
-        String userCache = wechatUserCacheClient.getUserCache(authorization);
-        if(userCache==null || userCache.equals("")){
-            logger.info(" --- 微信授权信息已过期");
-            response.setCharacterEncoding("utf-8");
-            response.setStatus(403);
-            response.getWriter().write("<body style='font-size:20'>Http Status: 授权信息已过期</body>");
-            return null;
-        }
-        JSONObject cacheJson = JSONObject.parseObject(userCache);
-        String accountId = cacheJson.getString("accountId");
-        String tuId = cacheJson.getString("tuId");
-        request.setAttribute("accountId", accountId);
-        request.setAttribute("tuId", tuId);//微信用户ID
+//        /**
+//         * 校验系统授权信息
+//         */
+//        HttpServletResponse response = sra.getResponse();
+//        String authorization = request.getHeader("Authorization");
+//        if(authorization==null||authorization.equals("")){
+//            logger.info(" --- 微信未进行授权");
+//            response.setCharacterEncoding("utf-8");
+//            response.setStatus(403);
+//            response.getWriter().write("<body style='font-size:20'>Http Status: 403 未进行授权</body>");
+//            return null;
+//        }
+//        String userCache = wechatUserCacheClient.getUserCache(authorization);
+//        if(userCache==null || userCache.equals("")){
+//            logger.info(" --- 微信授权信息已过期");
+//            response.setCharacterEncoding("utf-8");
+//            response.setStatus(403);
+//            response.getWriter().write("<body style='font-size:20'>Http Status: 授权信息已过期</body>");
+//            return null;
+//        }
+//        JSONObject cacheJson = JSONObject.parseObject(userCache);
+//        String accountId = cacheJson.getString("accountId");
+//        String tuId = cacheJson.getString("tuId");
+//        request.setAttribute("accountId", accountId);
+//        request.setAttribute("tuId", tuId);//微信用户ID
         Object o = pjp.proceed();
         return o;
     }

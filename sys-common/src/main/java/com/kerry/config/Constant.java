@@ -41,4 +41,9 @@ public class Constant {
      * 数据字典缓存key
      */
     public final static String DICT_CODE_CACHE = "DICT_CODE_CACHE";
+
+    /**
+     * 短信验证码有效时间10分钟
+     */
+    public final static long SMS_CODE_INVALID_TIME = 10*60L;
 }

@@ -37,10 +37,10 @@ public class CaptchaServiceImpl implements ICaptchaService {
         if(!PhoneUtils.isPhoneLegal(telephone)){
             return ResponseEntity.createErrorJsonResponse("请输入正确的手机号码");
         }
-        int authCode = RandomStr.getRandNum(0, 999999);
-        redisUtil.set(telephone,authCode,AUTH_CODE_INVALID_TIME);
+        String smsCode = RandomStr.getSmsCode();
+        redisUtil.set(telephone,smsCode,AUTH_CODE_INVALID_TIME);
         ArrayList<String> params = new ArrayList<>();
-        params.add(authCode+"");
+        params.add(smsCode+"");
         params.add("10");
         String result = SmsUtils.sendSms(13975, telephone, params);
         if(result.equals("ok")){

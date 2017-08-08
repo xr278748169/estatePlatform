@@ -32,4 +32,23 @@ public class RandomStr {
         return randNum;
     }
 
+    /**
+     * 生成6位数短信验证码
+     * @return
+     */
+    public static String getSmsCode(){
+        int min = 0;
+        int max = 999999;
+        int randNum = min + (int) (Math.random() * ((max - min) + 1));
+        String result =  randNum+"";
+        if(result.length()!=6){
+            int len = 6-result.length();
+            while (len>=0) {
+                result = result+"0";
+                len--;
+            }
+        }
+        return result;
+    }
+
 }
