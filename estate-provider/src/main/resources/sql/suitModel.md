@@ -6,7 +6,7 @@ LEFT JOIN e_owner ow ON ow.own_id = su.own_id
 LEFT JOIN e_building_room br ON br.bur_id = ow.bur_id
 LEFT JOIN e_building bu ON bu.bud_id = ow.bud_id
 LEFT JOIN e_community com ON com.com_id = su.com_id WHERE 1=1 
-@if(authCode!='0'){
+@if(!isEmpty(authCode)&&authCode!='0'){
     AND su.auth_code LIKE #authCode+'%'#
 @}
 @if(!isEmpty(comId)){
@@ -17,6 +17,9 @@ LEFT JOIN e_community com ON com.com_id = su.com_id WHERE 1=1
 @}
 @if(!isEmpty(title)){
     AND su.title LIKE #'%'+title+'%'#
+@}
+@if(!isEmpty(ownId)){
+    AND su.own_id = #ownId#
 @}
 @if(!isEmpty(ownName)){
     AND ow.own_name LIKE #'%'+ownName+'%'#
@@ -33,7 +36,7 @@ LEFT JOIN e_owner ow ON ow.own_id = su.own_id
 LEFT JOIN e_building_room br ON br.bur_id = ow.bur_id
 LEFT JOIN e_building bu ON bu.bud_id = ow.bud_id
 LEFT JOIN e_community com ON com.com_id = su.com_id WHERE 1=1 
-@if(authCode!='0'){
+@if(!isEmpty(authCode)&&authCode!='0'){
     AND su.auth_code LIKE #authCode+'%'#
 @}
 @if(!isEmpty(comId)){
@@ -44,6 +47,9 @@ LEFT JOIN e_community com ON com.com_id = su.com_id WHERE 1=1
 @}
 @if(!isEmpty(title)){
     AND su.title LIKE #'%'+title+'%'#
+@}
+@if(!isEmpty(ownId)){
+    AND su.own_id = #ownId#
 @}
 @if(!isEmpty(ownName)){
     AND ow.own_name LIKE #'%'+ownName+'%'#

@@ -1,15 +1,13 @@
 package com.kerry.estate.serv.web;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.kerry.core.SearchParams;
 import com.kerry.estate.dto.RepairsDto;
 import com.kerry.estate.serv.client.RepairsClient;
+import com.kerry.estate.serv.model.RepairsModel;
 import org.beetl.sql.core.engine.PageQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 报修服务微信接口
@@ -17,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping("/api/estate/open/repairs")
-public class RepairsRestful {
+public class RepairsRestfull {
 
     @Autowired
     private RepairsClient repairsClient;
@@ -48,6 +46,17 @@ public class RepairsRestful {
             return null;
         }
         return repairsClient.findByPage(params, "-1");
+    }
+
+    /**
+     * 主键查询
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/select/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public RepairsModel selectById(@PathVariable("id") String id){
+        return repairsClient.selectById(id);
     }
 
 }

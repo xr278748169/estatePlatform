@@ -118,10 +118,8 @@ public class ResFileService implements IResFileInter {
     public void insertBatch(List<ResFileModel> resFileList) throws Exception {
         //先删除原有的
         String bussId = resFileList.get(0).getBussId();
-        int num = resFileDao.deleteByBussId(bussId);
-        if(num > 0){
-            sqlManager.insertBatch(ResFileModel.class, resFileList);
-        }
+        resFileDao.deleteByBussId(bussId);
+        sqlManager.insertBatch(ResFileModel.class, resFileList);
     }
 
     /**
