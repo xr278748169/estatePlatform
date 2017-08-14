@@ -2,6 +2,7 @@ package com.kerry.estate.serv.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.kerry.core.SearchParams;
+import com.kerry.estate.dto.RepairsDto;
 import com.kerry.estate.serv.inter.IRepairsInter;
 import com.kerry.estate.serv.model.RepairsModel;
 import org.apache.log4j.Logger;
@@ -40,6 +41,9 @@ public class RepairsController {
         ServiceInstance instance = client.getLocalServiceInstance();
         if(params.getParams()==null){
             params.setParams(new HashMap());
+        }
+        if(code.equals("-1")){//-1表示前端查询
+            code = "";
         }
         params.getParams().put("authCode", code);
         PageQuery query = repairsInter.findByPage(params);
@@ -91,5 +95,16 @@ public class RepairsController {
     @RequestMapping(value = "/select/{id}", method = RequestMethod.GET)
     public RepairsModel selectById(@PathVariable("id") String id) throws Exception {
         return repairsInter.selectById(id);
+    }
+
+    /**
+     * 微信前端保存
+     * @param repairsDto
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String saveRepairs(@RequestBody RepairsDto repairsDto) throws Exception {
+        return repairsInter.saveRepairs(repairsDto);
     }
 }

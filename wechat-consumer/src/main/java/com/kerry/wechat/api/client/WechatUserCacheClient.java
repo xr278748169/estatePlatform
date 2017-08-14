@@ -1,5 +1,6 @@
 package com.kerry.wechat.api.client;
 
+import com.kerry.dto.WechatCache;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,5 +17,5 @@ public interface WechatUserCacheClient {
     String setUserCache(@PathVariable("openId") String openId, @PathVariable("accountId") String accountId);
 
     @RequestMapping(value = "/wechat/user/cache/{token}/get", method = RequestMethod.GET)
-    String getUserCache(@PathVariable("token") String token);
+    WechatCache getUserCache(@PathVariable("token") String token);
 }

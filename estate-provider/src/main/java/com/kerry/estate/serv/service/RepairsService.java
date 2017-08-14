@@ -1,10 +1,15 @@
 package com.kerry.estate.serv.service;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
 import com.kerry.estate.base.inter.IResFileInter;
 import com.kerry.estate.base.model.ResFileModel;
+import com.kerry.estate.dto.RepairsDto;
+import com.kerry.estate.owner.inter.IOwnerInter;
+import com.kerry.estate.owner.model.OwnerModel;
 import com.kerry.estate.serv.dao.RepairsDao;
 import com.kerry.estate.serv.inter.IRepairsInter;
 import com.kerry.estate.serv.model.RepairsModel;
@@ -14,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -33,6 +39,9 @@ public class RepairsService implements IRepairsInter {
 
     @Autowired
     private IResFileInter resFileInter;
+
+    @Autowired
+    private IOwnerInter ownerInter;
 
     /**
      * 保存
@@ -129,5 +138,52 @@ public class RepairsService implements IRepairsInter {
     @Override
     public List<RepairsModel> findByCondition(RepairsModel params) throws Exception {
         return sqlManager.template(params);
+    }
+
+    /**
+     * 微信端保存报修信息
+     * @param repairsDto
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public String saveRepairs(RepairsDto repairsDto) throws Exception {
+        String ownId = repairsDto.getOwnId();
+        if(ownId==null || ownId.equals("")){
+            return ResponseEntity.createErrorJsonResponse("获取个人信息失败");
+        }
+        OwnerModel ownerModel = ownerInter.selectById(ownId);
+        if(ownerModel==null){
+            return ResponseEntity.createErrorJsonResponse("获取个人信息失败");
+        }
+        RepairsModel repairs = new RepairsModel();
+        repairs.setTitle(repairsDto.getTitle());
+        repairs.setContent(repairsDto.getContent());
+        repairs.setOwnId(ownId);
+        repairs.setComId(ownerModel.getComId());
+        repairs.setReDate(new Date());
+        repairs.setAuthCode(ownerModel.getAuthCode());
+        repairs.setState("dispose01");//待处理
+        repairs.setCreateDate(new Date());
+        repairs.setCreateUser(ownId);
+        int num = sqlManager.insert(repairs);
+        if(num > 0){
+            //保存图片
+            List<ResFileModel> resFileList = new ArrayList<>();
+            for(Object obj : repairsDto.getImgList()){
+                JSONObject imgObj = JSON.parseObject(JSON.toJSONString(obj));
+                ResFileModel resFile = new ResFileModel();
+                resFile.setResType("images");
+                resFile.setResUrl(imgObj.getString("url"));
+                resFile.setBussId(repairs.getReId());
+                resFile.setAuthCode(repairs.getAuthCode());
+                resFileList.add(resFile);
+            }
+            if(resFileList.size()>0){
+                resFileInter.insertBatch(resFileList);
+            }
+            return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
+        }
+        return ResponseEntity.createErrorJsonResponse(Constant.DATA_RESULT_ERROR);
     }
 }

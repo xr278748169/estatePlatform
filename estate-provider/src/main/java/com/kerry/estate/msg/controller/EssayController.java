@@ -41,6 +41,9 @@ public class EssayController {
         if(params.getParams()==null){
             params.setParams(new HashMap());
         }
+        if(code.equals("-1")){//-1表示前端查询
+            code = "";
+        }
         params.getParams().put("authCode", code);
         PageQuery query = essayInter.findByPage(params);
         logger.info("/essay/list, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + JSON.toJSONString(query));

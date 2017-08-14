@@ -1,6 +1,7 @@
 package com.kerry.estate.owner.client;
 
 import com.kerry.core.SearchParams;
+import com.kerry.dto.WechatCache;
 import com.kerry.estate.dto.AuthDto;
 import com.kerry.estate.owner.model.OwnerModel;
 import org.beetl.sql.core.engine.PageQuery;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 /**
  * 业主信息管理
@@ -34,4 +37,10 @@ public interface OwnerClient {
 
     @RequestMapping(value = "/owner/auth", method = RequestMethod.POST)
     String ownAuth(@RequestBody AuthDto authDto);
+
+    @RequestMapping(value = "/owner/get/auth/{token}", method = RequestMethod.GET)
+    WechatCache getOwnAuth(@PathVariable("token") String token);
+
+    @RequestMapping(value = "/owner/list/family/{ownId}", method = RequestMethod.GET)
+    List<OwnerModel> findFamily(@PathVariable("ownId") String ownId);
 }

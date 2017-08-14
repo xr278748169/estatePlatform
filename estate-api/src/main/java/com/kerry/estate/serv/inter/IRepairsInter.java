@@ -1,6 +1,7 @@
 package com.kerry.estate.serv.inter;
 
 import com.kerry.estate.BaseInter;
+import com.kerry.estate.dto.RepairsDto;
 import com.kerry.estate.serv.model.RepairsModel;
 
 /**
@@ -8,4 +9,6 @@ import com.kerry.estate.serv.model.RepairsModel;
  * Created by wangshen on 2017/7/27.
  */
 public interface IRepairsInter extends BaseInter<RepairsModel> {
+
+    String saveRepairs(RepairsDto repairsDto) throws Exception;
 }

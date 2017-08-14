@@ -1,6 +1,7 @@
 package com.kerry.estate.serv.client;
 
 import com.kerry.core.SearchParams;
+import com.kerry.estate.dto.RepairsDto;
 import com.kerry.estate.serv.model.RepairsModel;
 import org.beetl.sql.core.engine.PageQuery;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -30,4 +31,7 @@ public interface RepairsClient {
 
     @RequestMapping(value = "/repairs/select/{id}", method = RequestMethod.GET)
     RepairsModel selectById(@PathVariable("id") String id);
+
+    @RequestMapping(value = "/repairs/save", method = RequestMethod.POST)
+    String saveRepairs(@RequestBody RepairsDto repairsDto);
 }

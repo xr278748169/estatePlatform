@@ -41,6 +41,8 @@ public class AuthDto {
     @NotBlank(message = "请输入短信验证码")
     private String authCode;
 
+    private String token;
+
     public String getComId() {
         return comId;
     }
@@ -121,6 +123,14 @@ public class AuthDto {
         this.authCode = authCode;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public String toString() {
         return "AuthDto{" +
@@ -134,6 +144,7 @@ public class AuthDto {
                 ", telephone='" + telephone + '\'' +
                 ", visitCode='" + visitCode + '\'' +
                 ", authCode='" + authCode + '\'' +
+                ", token='" + token + '\'' +
                 '}';
     }
 }

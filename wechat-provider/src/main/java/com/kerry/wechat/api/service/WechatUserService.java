@@ -45,7 +45,7 @@ public class WechatUserService implements IWechatUserInter {
      * @return
      */
     @Override
-    public String oauthUser(String code, String accountId) {
+    public String oauthUser(String code, String accountId) throws Exception {
         AccountModel accountModel = (AccountModel) redisUtil.getHash(WxConstant.WECHAT_ACCOUNT_KEY,accountId);
         String appSecret = accountModel.getAppsecret();
         String appId = accountModel.getAppid();

@@ -1,5 +1,6 @@
 package com.kerry.wechat.api.controller;
 
+import com.kerry.dto.WechatCache;
 import com.kerry.wechat.api.inter.IWechatUserCacheInter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +36,18 @@ public class WechatUserCacheController {
      * @return
      */
     @RequestMapping(value = "/{token}/get", method = RequestMethod.GET)
-    public String getUserCache(@PathVariable("token") String token) throws Exception {
+    public WechatCache getUserCache(@PathVariable("token") String token) throws Exception {
         return wechatUserCacheInter.getUserCache(token);
+    }
+
+    /**
+     * 更新微信用户cache
+     * @param wechatCache
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String updateUserCache(WechatCache wechatCache) throws Exception {
+        return wechatUserCacheInter.updateUserCache(wechatCache);
     }
 }

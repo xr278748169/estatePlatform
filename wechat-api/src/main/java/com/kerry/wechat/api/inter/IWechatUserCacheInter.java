@@ -1,6 +1,6 @@
 package com.kerry.wechat.api.inter;
 
-import com.kerry.wechat.model.TUserModel;
+import com.kerry.dto.WechatCache;
 
 /**
  * 微信用户cache
@@ -8,7 +8,9 @@ import com.kerry.wechat.model.TUserModel;
  */
 public interface IWechatUserCacheInter {
 
-    String setUserCache(String openId, String accountId);
+    String setUserCache(String openId, String accountId) throws Exception;
 
-    String getUserCache(String token);
+    WechatCache getUserCache(String token) throws Exception;
+
+    String updateUserCache(WechatCache wechatCache) throws Exception;
 }

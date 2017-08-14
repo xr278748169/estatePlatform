@@ -2,6 +2,7 @@ package com.kerry.estate.owner.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.kerry.core.SearchParams;
+import com.kerry.dto.WechatCache;
 import com.kerry.estate.dto.AuthDto;
 import com.kerry.estate.owner.inter.IOwnerInter;
 import com.kerry.estate.owner.model.OwnerModel;
@@ -13,6 +14,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * 业主信息管理
@@ -103,5 +105,27 @@ public class OwnerController {
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public String ownAuth(@RequestBody AuthDto authDto) throws Exception {
         return ownerInter.ownAuth(authDto);
+    }
+
+    /**
+     * 获取用户认证信息
+     * @param token
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/get/auth/{token}", method = RequestMethod.GET)
+    public WechatCache getOwnAuth(@PathVariable("token") String token) throws Exception {
+        return ownerInter.getOwnAuth(token);
+    }
+
+    /**
+     * 获取业主家庭信息
+     * @param ownId
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/list/family/{ownId}", method = RequestMethod.GET)
+    public List<OwnerModel> findFamily(@PathVariable("ownId") String ownId) throws Exception {
+        return ownerInter.findFamily(ownId);
     }
 }

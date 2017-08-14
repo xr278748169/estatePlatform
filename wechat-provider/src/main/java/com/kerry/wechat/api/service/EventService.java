@@ -84,9 +84,11 @@ public class EventService implements IEventInter {
             params.setAccountId(accountId);
             List<TUserModel> tUserList = itUserInter.findByCondition(params);
             if(tUserList.size() > 0){
-                tUser.setTuId(tUserList.get(0).getTuId());
+                tUser.setTuId(tUserList.get(0).getTuId());//设置更新的主键
                 itUserInter.update(tUser);
             }else{
+                //新增设置业务状态为未认证 -1;
+                tUser.setAuthBuss("-1");
                 itUserInter.insert(tUser);
             }
             //调用回复消息

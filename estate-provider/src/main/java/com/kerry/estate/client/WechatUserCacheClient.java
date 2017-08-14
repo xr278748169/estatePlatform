@@ -18,4 +18,7 @@ public interface WechatUserCacheClient {
 
     @RequestMapping(value = "/wechat/user/cache/{token}/get", method = RequestMethod.GET)
     WechatCache getUserCache(@PathVariable("token") String token);
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    String updateUserCache(WechatCache wechatCache);
 }

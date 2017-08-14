@@ -5,13 +5,16 @@ import com.alibaba.fastjson.JSONObject;
 import com.kerry.config.Constant;
 import com.kerry.core.ResponseEntity;
 import com.kerry.core.SearchParams;
+import com.kerry.dto.WechatCache;
 import com.kerry.estate.base.inter.IBuildingRoomInter;
 import com.kerry.estate.base.inter.ICommunityInter;
 import com.kerry.estate.base.model.BuildingRoomModel;
 import com.kerry.estate.base.model.CommunityModel;
 import com.kerry.estate.client.CaptchaClient;
 import com.kerry.estate.client.TUserClient;
+import com.kerry.estate.client.WechatUserCacheClient;
 import com.kerry.estate.dto.AuthDto;
+import com.kerry.estate.owner.dao.OwnerDao;
 import com.kerry.estate.owner.inter.IOwnerInter;
 import com.kerry.estate.owner.model.OwnerModel;
 import org.beetl.sql.core.SQLManager;
@@ -21,7 +24,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 业主信息管理
@@ -35,6 +40,9 @@ public class OwnerService implements IOwnerInter {
     private SQLManager sqlManager;
 
     @Autowired
+    private OwnerDao ownerDao;
+
+    @Autowired
     private CaptchaClient captchaClient;
 
     @Autowired
@@ -45,6 +53,9 @@ public class OwnerService implements IOwnerInter {
 
     @Autowired
     private TUserClient tUserClient;
+
+    @Autowired
+    private WechatUserCacheClient wechatUserCacheClient;
 
     /**
      * 保存
@@ -73,6 +84,10 @@ public class OwnerService implements IOwnerInter {
         ownerModel.setUpdateDate(new Date());
         int num = sqlManager.updateTemplateById(ownerModel);
         if(num > 0){
+            if(ownerModel.getAuthState().equals("1")){//认证通过
+                OwnerModel owner = this.selectById(ownerModel.getOwnId());
+                tUserClient.updateBussState(owner.getTuId(),"1");
+            }
             return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
         }
         return ResponseEntity.createErrorJsonResponse(Constant.DATA_RESULT_ERROR);
@@ -101,7 +116,7 @@ public class OwnerService implements IOwnerInter {
      */
     @Override
     public OwnerModel selectById(String id) throws Exception {
-        return sqlManager.unique(OwnerModel.class, id);
+        return ownerDao.selectById(id);
     }
 
     /**
@@ -139,6 +154,17 @@ public class OwnerService implements IOwnerInter {
      */
     @Override
     public String ownAuth(AuthDto authDto) throws Exception {
+        if(authDto.getToken()==null || authDto.getToken().equals("")){
+            return ResponseEntity.createErrorJsonResponse("未获取到微信信息");
+        }
+        //先获取微信cache信息
+        WechatCache wechatCache = wechatUserCacheClient.getUserCache(authDto.getToken());
+        if(wechatCache==null){
+            return ResponseEntity.createErrorJsonResponse("未获取到微信信息");
+        }
+        /**
+         * 开始处理业务
+         */
         String telephone = authDto.getTelephone();
         String authCode = authDto.getAuthCode();
         JSONObject smsCodeResult = JSON.parseObject(captchaClient.verifySmsCode(telephone, authCode));
@@ -211,14 +237,66 @@ public class OwnerService implements IOwnerInter {
             if(authDto.getOwnType().equals("owner")){
                 BuildingRoomModel params = new BuildingRoomModel();
                 params.setBurId(authDto.getBurId());
-                params.setState("1");//锁定号
+                params.setState("1");//锁定房号
                 buildingRoomInter.update(params);
             }
             //修改微信用户表中的业务认证状态，同业务状态一致
             tUserClient.updateBussState(authDto.getTuId(),"0");
-
-            return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
+            //更新cache状态
+            wechatCache.setBussId(ownerModel.getOwnId());
+            wechatCache.setAuthState("0");//业务状态
+            String msg = wechatUserCacheClient.updateUserCache(wechatCache);
+            if(msg!=null && msg.equals("OK")){
+                return ResponseEntity.createNormalJsonResponse(Constant.DATA_RESULT_SUCCESS);
+            }else{
+                return ResponseEntity.createErrorJsonResponse("未获取到微信信息");
+            }
         }
         return ResponseEntity.createErrorJsonResponse(Constant.DATA_RESULT_ERROR);
+    }
+
+    /**
+     * 获取业主认证信息
+     * @param token
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public WechatCache getOwnAuth(String token) throws Exception {
+        if(token==null || token.equals("")){
+            return null;
+        }
+        WechatCache wechatCache = wechatUserCacheClient.getUserCache(token);
+        if(wechatCache==null){
+            return null;
+        }
+        //根据tuId获取业主信息
+        String tuId = wechatCache.getTuId();
+        OwnerModel params = new OwnerModel();
+        params.setTuId(tuId);
+        List<OwnerModel> ownerList = this.findByCondition(params);
+        if(ownerList.size() > 0){
+            wechatCache.setBussId(ownerList.get(0).getOwnId());
+        }
+        return wechatCache;
+    }
+
+    /**
+     * 获取业主的家庭成员
+     * @param ownId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<OwnerModel> findFamily(String ownId) throws Exception {
+        if(ownId==null || ownId.equals("")){
+            return null;
+        }
+        OwnerModel ownerModel = this.selectById(ownId);
+        String burId = ownerModel.getBurId();//房号
+        //根据房号查询房号下的业主信息
+        Map<String,Object> params = new HashMap<>();
+        params.put("burId",burId);
+        return ownerDao.query(params);
     }
 }
